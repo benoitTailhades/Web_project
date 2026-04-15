@@ -1,243 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/style.css">
-<title>EFREI — Site Complet</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js" defer></script>
+    <title>EFREI — Site Complet</title>
+  </head>
+  <body>
+    <header>
+      <!-- ── NAVIGATION ── -->
+      <nav>
+        <a class="logo" href="home.html">EFREI</a>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="teachers.html">Teachers</a></li>
+          <li><a href="planning.html">Planning</a></li>
+          <li><a href="research.html">Recherche</a></li>
+          <li><a href="contact.html">Contact/About Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<!-- ── NAVIGATION ── -->
-<nav>
-  <a class="logo" onclick="showPage('home')">EFREI</a>
-  <ul>
-    <li><a onclick="showPage('home')">Home</a></li>
-    <li><a onclick="showPage('formations')">Formations</a></li>
-    <li><a onclick="showPage('teachers')">Teachers</a></li>
-    <li><a onclick="showPage('planning')">Planning</a></li>
-    <li><a onclick="showPage('recherche')">Recherche</a></li>
-    <li><a onclick="showPage('contact')">Contact/About Us</a></li>
-  </ul>
-</nav>
-
-<!-- ════════════════════════════════════
+    <!-- ════════════════════════════════════
      PAGE: HOME
 ════════════════════════════════════ -->
-<div id="page-home" class="page active">
-  <div class="home-hero">
-    <div class="home-hero-btns">
-      <a class="btn-outline" onclick="showPage('formations')">Discover our formations</a>
-      <a class="btn-solid" onclick="showPage('contact')">About Us</a>
-    </div>
+    <div class="home-hero">
+  <div class="home-hero-btns">
+    <a class="btn-outline" href="formations.html">Discover our formations</a>
+    <a class="btn-solid" href="contact.html">About Us</a>
   </div>
-  <div class="home-cards">
-    <div class="feature-card">
-      <h3>This outstanding object</h3>
-      <p>Call out a feature, benefit, or value that can stand on its own.</p>
-      <div class="feature-card img-placeholder img-orange"></div>
-    </div>
-    <div class="feature-card">
-      <h3>A greater object</h3>
-      <p>Call out a feature, benefit, or value that can stand on its own.</p>
-      <div class="feature-card img-placeholder img-cyan"></div>
-    </div>
-    <div class="feature-card">
-      <h3>And another one</h3>
-      <p>Call out a feature, benefit, or value that can stand on its own.</p>
-      <div class="feature-card img-placeholder img-teal"></div>
-    </div>
-  </div>
-  <footer>
-    <a class="logo" onclick="showPage('home')">EFREI</a>
-    <ul>
-      <li><a onclick="showPage('home')">Home</a></li>
-      <li><a class="active" onclick="showPage('contact')">About Us</a></li>
-    </ul>
-    <span class="copy">© 2025 EFREI — Département Informatique</span>
-  </footer>
 </div>
-
-
-
-
-<!-- ════════════════════════════════════
-     PAGE: TEACHER PROFILE
-════════════════════════════════════ -->
-<div id="page-profile" class="page">
-  <div class="profile-content">
-    <div class="profile-hero">
-      <div class="text">
-        <h1>Teacher profile</h1>
-        <p>Go ahead and say just a little more about what you do.</p>
-        <h2>Office hour</h2>
-        <p>Go ahead and say just a little more about what you do.</p>
-      </div>
-      <div class="butterfly-img">
-        <svg class="butterfly-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none">
-            <!-- butterfly wings in dotted style -->
-            <ellipse cx="70" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
-            <ellipse cx="130" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
-            <ellipse cx="75" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
-            <ellipse cx="125" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
-            <!-- body -->
-            <ellipse cx="100" cy="100" rx="6" ry="50" fill="#8878c8"/>
-            <!-- dots texture -->
-            <circle cx="60" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
-            <circle cx="80" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
-            <circle cx="55" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
-            <circle cx="140" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
-            <circle cx="120" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
-            <circle cx="145" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
-            <!-- antennae -->
-            <line x1="97" y1="52" x2="80" y2="30" stroke="#8878c8" stroke-width="1.5"/>
-            <line x1="103" y1="52" x2="120" y2="30" stroke="#8878c8" stroke-width="1.5"/>
-            <circle cx="80" cy="30" r="3" fill="#8878c8"/>
-            <circle cx="120" cy="30" r="3" fill="#8878c8"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div class="profile-cols">
-      <div>
-        <h3>A subheader for some text</h3>
-        <p>Writing for websites is both simple and complex. On the one hand, all you need to do is say what you mean, in your words, in your voice. One the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan?</p>
-      </div>
-      <div>
-        <h3>A subheader for more text</h3>
-        <p>Writing for websites is both simple and complex. On the one hand, all you need to do is say what you mean, in your words, in your voice. One the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan? There's a theory that people read in an F-shape pattern, and that this should influence how you structure content on your website. Lots of ins and outs—it's no wonder writers rule the world.</p>
-      </div>
-    </div>
+    <div class="home-cards">
+  <div class="feature-card">
+    <h3>This outstanding object</h3>
+    <p>Call out a feature, benefit, or value that can stand on its own.</p>
+    <div class="feature-card img-placeholder img-orange"></div>
   </div>
-  <footer>
-    <a class="logo" onclick="showPage('home')">EFREI</a>
-    <ul>
-      <li><a onclick="showPage('home')">Home</a></li>
-      <li><a class="active" onclick="showPage('contact')">About Us</a></li>
-    </ul>
-    <span class="copy">© 2025 EFREI — Département Informatique</span>
-  </footer>
-</div>
-
-<!-- ════════════════════════════════════
-     PAGE: PLANNING
-════════════════════════════════════ -->
-<div id="page-planning" class="page">
-  <div class="planning-content">
-    <h1>Planning</h1>
-    <div class="calendar-wrap">
-      <div class="cal-header">
-        <div></div>
-        <div class="day-label">SUN</div>
-        <div class="day-label">MON</div>
-        <div class="day-label">TUE</div>
-        <div class="day-label">WED</div>
-        <div class="day-label" style="background:#f0f6ff">THU</div>
-        <div class="day-label">FRI</div>
-        <div class="day-label">SAT</div>
-      </div>
-      <div class="cal-grid" id="cal-grid"></div>
-    </div>
+  <div class="feature-card">
+    <h3>A greater object</h3>
+    <p>Call out a feature, benefit, or value that can stand on its own.</p>
+    <div class="feature-card img-placeholder img-cyan"></div>
   </div>
-  <footer>
-    <a class="logo" onclick="showPage('home')">EFREI</a>
-    <ul>
-      <li><a onclick="showPage('home')">Home</a></li>
-      <li><a class="active" onclick="showPage('contact')">About Us</a></li>
-    </ul>
-    <span class="copy">© 2025 EFREI — Département Informatique</span>
-  </footer>
-</div>
-
-
-
-<!-- ════════════════════════════════════
-     PAGE: SUBJECT (article page)
-════════════════════════════════════ -->
-<div id="page-subject" class="page">
-  <div class="hero-banner"><h1>SUBJECT</h1></div>
-  <div class="subject-content">
-    <p class="subject-eyebrow">Eyebrow text to label this content</p>
-    <h1>A headline for some text</h1>
-    <p class="body-text">On the one hand, all you need to do is say what you mean, in your words, in your voice. On the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan? There's a theory that people read in an F-shape pattern, and that this should influence how you structure content on your website. Lots of ins and outs—it's no wonder writers rule the world.</p>
+  <div class="feature-card">
+    <h3>And another one</h3>
+    <p>Call out a feature, benefit, or value that can stand on its own.</p>
+    <div class="feature-card img-placeholder img-teal"></div>
   </div>
-  <footer>
-    <a class="logo" onclick="showPage('home')">EFREI</a>
-    <ul>
-      <li><a onclick="showPage('home')">Home</a></li>
-      <li><a class="active" onclick="showPage('contact')">About Us</a></li>
-    </ul>
-    <span class="copy">© 2025 EFREI — Département Informatique</span>
-  </footer>
 </div>
+    <footer>
+      <a class="logo" href="home.html">EFREI</a>
+      <ul>
+        <li><a href="home.html" >Home</a></li>
+        <li><a href="contact.html">About Us</a></li>
+      </ul>
+      <span class="copy">© 2025 EFREI — Département Informatique</span>
+    </footer>
 
 
-
-
-
-<script>
-  function showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    var el = document.getElementById('page-' + id);
-    if (el) { el.classList.add('active'); }
-    window.scrollTo(0,0);
-    document.querySelectorAll('nav ul a').forEach(a => a.classList.remove('active'));
-  }
-
-  // Build calendar grid
-  (function buildCalendar() {
-    var hours = [];
-    for (var h = 7; h <= 17; h++) {
-      hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
-    }
-    var events = {
-      'MON-8':  [{cls:'event-blue',   t:'8:00 AM ●', b:'Monday Wake-Up Hour'}],
-      'MON-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'All-Team Kickoff'}],
-      'MON-10': [{cls:'event-blue',   t:'10:00 AM ●',b:'Financial Update'}],
-      'MON-11': [{cls:'event-blue',   t:'11:00 AM ●',b:'😋 New Employee Welcome Lunch!'}],
-      'MON-13': [{cls:'event-blue',   t:'1:00 PM ●', b:'Design Review'}],
-      'MON-14': [{cls:'event-yellow', t:'2:00 PM ●', b:'1:1 with Jon'}],
-      'TUE-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'Design Review: Acme Marketi...'}],
-      'TUE-12': [{cls:'event-green',  t:'12:00 PM ●',b:'😋 Design System Kickoff Lunch'}],
-      'TUE-14': [{cls:'event-blue',   t:'2:00 PM ●', b:'Concept Design Review II'}],
-      'TUE-16': [{cls:'event-red',    t:'4:00 PM ●', b:'🚀 Design Team Happy Hour'}],
-      'WED-9':  [{cls:'event-purple', t:'9:00 AM ●', b:'Webinar: Figma ...'}],
-      'WED-11': [{cls:'event-purple', t:'11:00 AM ●',b:'Onboarding Presentation'}],
-      'WED-13': [{cls:'event-purple', t:'1:00 PM ●', b:'MVP Prioritization Workshop'}],
-      'THU-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'☕ Coffee Chat'}],
-      'THU-10': [{cls:'event-purple', t:'10:00 AM ●',b:'Health Benefits Walkthrough'}],
-      'THU-13': [{cls:'event-blue',   t:'1:00 PM ●', b:'Design Review'}],
-      'FRI-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'☕ Coffee Chat'}],
-      'FRI-12': [{cls:'event-green',  t:'12:00 PM ●',b:'😋 Marketing Meet-and-Greet'}],
-      'FRI-14': [{cls:'event-yellow', t:'2:00 PM ●', b:'1:1 with Heather'}],
-      'FRI-16': [{cls:'event-pink',   t:'4:00 PM ●', b:'❤ Happy Hour'}],
-    };
-    var days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-    var grid = document.getElementById('cal-grid');
-    for (var hi = 0; hi < hours.length; hi++) {
-      var hourNum = hi + 7;
-      var timeEl = document.createElement('div');
-      timeEl.className = 'time-label';
-      timeEl.textContent = hours[hi];
-      grid.appendChild(timeEl);
-      for (var di = 0; di < days.length; di++) {
-        var cell = document.createElement('div');
-        cell.className = 'cal-cell' + (days[di]==='THU' ? ' today' : '');
-        var key = days[di] + '-' + hourNum;
-        if (events[key]) {
-          events[key].forEach(function(ev) {
-            var evEl = document.createElement('div');
-            evEl.className = 'event ' + ev.cls;
-            evEl.innerHTML = '<strong>' + ev.t + '</strong><br>' + ev.b;
-            evEl.style.top = '2px';
-            cell.appendChild(evEl);
-          });
-        }
-        grid.appendChild(cell);
-      }
-    }
-  })();
-</script>
-</body>
+  </body>
 </html>

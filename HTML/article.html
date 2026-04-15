@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="text/javascript" src="../js/script.js" defer></script>
+
+  <title>Article</title>
 </head>
 <body>
+<header>
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a class="logo" onclick="showPage('home')">EFREI</a>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="planning.html">Planning</a></li>
+      <li><a href="research.html">Recherche</a></li>
+      <li><a href="contact.html">Contact/About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
 <!-- ════════════════════════════════════
      PAGE: ARTICLE
 ════════════════════════════════════ -->
-<div id="page-article" class="page">
+
   <div class="subject-content">
     <p class="article-date">January 1, 2025</p>
     <h1 class="article-title">Article</h1>
@@ -55,14 +73,14 @@
     </div>
   </div>
   <footer>
-    <a class="logo" onclick="showPage('home')">EFREI</a>
-    <ul>
-      <li><a onclick="showPage('home')">Home</a></li>
-      <li><a class="active" onclick="showPage('contact')">About Us</a></li>
-    </ul>
-    <span class="copy">© 2025 EFREI — Département Informatique</span>
-  </footer>
-</div>
+  <a class="logo" href="home.html">EFREI</a>
+  <ul>
+    <li><a href="home.html" >Home</a></li>
+    <li><a href="contact.html">About Us</a></li>
+  </ul>
+  <span class="copy">© 2025 EFREI — Département Informatique</span>
+</footer>
+
 
 </body>
 </html>

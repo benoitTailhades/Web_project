@@ -535,7 +535,7 @@
     background: transparent;
     font-family: inherit;
   }
-  .form-group textarea { resize: none; height: 60px; }
+  .form-group textarea { resize: none; height: 30px; }
   .subject-radios { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
   .subject-radios label { font-size: 12px; display: flex; align-items: center; gap: 5px; }
   .subject-radios input[type=radio] { accent-color: var(--dark-navy); }
