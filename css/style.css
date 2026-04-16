@@ -2,10 +2,10 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --dark-navy: #0d1b2a;
-    --mid-navy: #1a2e42;
-    --teal-hero: #1a7a7a;
-    --accent-cyan: #00b8c8;
+    --dark-navy: #00171F;
+    --mid-navy: #003459;
+    --teal-hero: #007EA7;
+    --accent-cyan: #00A8E8;
     --text-dark: #0d1b2a;
     --text-gray: #666;
     --text-light: #888;
@@ -24,7 +24,7 @@
   }
 
   /* ── NAV ── */
-  nav {
+  .navbar {
     display: flex;
     align-items: center;
     padding: 18px 40px;
@@ -33,6 +33,24 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 4px solid var(--mid-navy); /* barre globale */
+  }
+  .nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  .nav-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -18.5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-cyan);
   }
   .logo {
     font-size: 22px;
@@ -112,6 +130,9 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .btn-outline:hover {
+    background-color: var(--mid-navy);
+  }
   .btn-solid {
     padding: 12px 28px;
     border: 1.5px solid var(--white);
@@ -121,6 +142,9 @@
     border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
+  }
+  .btn-solid:hover {
+    background-color: var(--mid-navy);
   }
   .home-cards {
     display: grid;
