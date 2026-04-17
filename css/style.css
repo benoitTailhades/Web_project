@@ -73,6 +73,19 @@
   }
   nav ul a:hover { text-decoration: underline; }
   nav ul a.active { color: var(--accent-cyan); }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 100;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent-cyan);
+    transition: 0.3s;
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -613,3 +626,106 @@
 
   /* Starburst SVG */
   .starburst-svg { width: 100%; height: 100%; }
+
+
+  /* ── RESPONSIVE DESIGN ── */
+
+  @media (max-width: 768px) {
+    /* 1. Navigation : On empile les liens verticalement */
+    .navbar {
+      flex-direction: column;
+      padding: 10px;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .nav-item {
+      padding: 5px;
+    }
+    .nav-item.active::after {
+      bottom: 0px;
+    }
+    .logo {
+      margin: 0 auto 10px;
+    }
+    .hamburger {
+      display: flex; /* On l'affiche sur mobile */
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    #nav-list {
+      display: none; /* On cache la liste par défaut */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      padding: 20px 0;
+    }
+
+    /* Classe qui sera ajoutée par JS pour ouvrir le menu */
+    #nav-list.active {
+      display: flex;
+    }
+
+    /* On cache le curseur bleu sur mobile car il ne fonctionne pas bien en vertical */
+    #nav-cursor {
+      display: none;
+    }
+
+    /* 2. Grilles de cartes (Home et Formations) : On passe à 1 colonne */
+    .home-cards,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    /* 3. Sections Teachers et Profile : On empile le texte et l'image */
+    .teacher-row,
+    .profile-hero,
+    .profile-cols,
+    .about-section {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    /* 4. Planning : On permet le défilement horizontal pour ne pas casser la grille */
+    .calendar-wrap {
+      overflow-x: auto;
+    }
+    .cal-header, .cal-grid {
+      min-width: 600px; /* Force une largeur minimale pour garder le calendrier lisible */
+    }
+
+    /* 5. Formulaire de contact : On passe les champs côte à côte en colonne */
+    .contact-box {
+      grid-template-columns: 1fr;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    /* Ajustements généraux des marges */
+    .hero-banner, .home-hero {
+      padding: 40px 20px;
+    }
+    .hero-banner h1 {
+      font-size: 32px;
+    }
+  }
