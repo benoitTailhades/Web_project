@@ -25,6 +25,7 @@
         <li><a href="research.html" class="nav-item">Research</a></li>
         <li><a href="contact.html" class="nav-item active">Contact/About Us</a></li>
       </ul>
+      <div class="nav-underline"></div>
     </nav>
   </header>
 
@@ -55,12 +56,12 @@
           </div>
           <!-- Decorative circles -->
           <svg class="circles-deco" viewBox="0 0 160 160">
-            <circle cx="80" cy="100" r="60" fill="none" stroke="#1a5070" stroke-width="40" opacity="0.5"/>
-            <circle cx="110" cy="80" r="50" fill="none" stroke="#1a6090" stroke-width="30" opacity="0.4"/>
+            <circle cx="80" cy="100" r="60" fill="#1a5070" stroke="#1a5070"  opacity="0.5"/>
+            <circle cx="110" cy="80" r="50" fill="#1a6090" stroke="#1a6090"  opacity="0.4"/>
           </svg>
         </div>
         <!-- RIGHT FORM -->
-        <form action="../form_output/contact_us.txt" method="post">
+        <form>
           <div class="contact-form-panel">
             <div class="form-row">
               <div class="form-group">
@@ -93,7 +94,7 @@
               <label>Message</label>
               <textarea placeholder="Write your message.."></textarea>
             </div>
-            <button class="btn-send">Send Message</button>
+            <button class="btn-send" onclick="alert('test')">Send Message</button>
           </div>
         </form>
 

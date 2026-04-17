@@ -30,7 +30,7 @@
     padding: 18px 40px;
     background: var(--white);
     border-bottom: 1px solid var(--border);
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
     border-bottom: 4px solid var(--mid-navy); /* barre globale */
@@ -43,15 +43,15 @@
     color: black;
     position: relative;
   }
-  .nav-item.active::after {
-    content: "";
+  .nav-underline{
     position: absolute;
-    bottom: -18.5px;
-    left: 0;
-    width: 100%;
+    bottom: -4px;
     height: 4px;
     background-color: var(--accent-cyan);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Effet de glisse fluide */
+    pointer-events: none;
   }
+
   .logo {
     font-size: 22px;
     font-weight: 900;
@@ -392,6 +392,12 @@
     position: relative;
   }
   .cal-cell.today { background: #f0f6ff; }
+  .cal-h-line {
+    position: relative;
+    bottom: 0;
+    height: 3px;
+    background-color: red;
+  }
   .day-label.today-header { background: #f0f6ff;}
   .event {
     position: absolute;
@@ -630,7 +636,7 @@
 
   /* ── RESPONSIVE DESIGN ── */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     /* 1. Navigation : On empile les liens verticalement */
     .navbar {
       flex-direction: column;
