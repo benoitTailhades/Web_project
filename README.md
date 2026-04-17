@@ -4,7 +4,7 @@ Ce projet est une plateforme web interactive développée dans le cadre du cursu
 
 ## 🚀 Démo en ligne
 Le site est hébergé sur GitHub Pages :
-[Consulter le site ici](https://benoittailhades.github.io/web_project/)
+[Consulter le site ici](https://benoittailhades.github.io/Web_project/)
 
 ## ✨ Fonctionnalités clés
 - **Navigation Animée** : Barre de navigation avec un curseur fluide qui suit l'utilisateur.
