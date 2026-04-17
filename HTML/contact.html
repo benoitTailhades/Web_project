@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/script.js" defer></script>
     <title>Contact Us/About Us</title>
@@ -10,9 +11,9 @@
   <header>
     <!-- ── NAVIGATION ── -->
     <nav class="navbar">
-      <a class="logo" href="home.html"><img src="../img/LOGO_EFREI_WEB_bleu.png" alt="Logo_Efrei_img" width="100" height="32"> </a>
+      <a class="logo" href="../index.html"><img src="../img/LOGO_EFREI_WEB_bleu.png" alt="Logo_Efrei_img" width="100" height="32"> </a>
       <ul>
-        <li><a href="home.html" class="nav-item">Home</a></li>
+        <li><a href="../index.html" class="nav-item">Home</a></li>
         <li><a href="formations.html" class="nav-item">Formations</a></li>
         <li><a href="teachers.html" class="nav-item">Teachers</a></li>
         <li><a href="planning.html" class="nav-item">Planning</a></li>
@@ -54,40 +55,43 @@
           </svg>
         </div>
         <!-- RIGHT FORM -->
-        <div class="contact-form-panel">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="John">
+        <form action="../form_output/contact_us.txt" method="post">
+          <div class="contact-form-panel">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+33 7 68 29 01 37">
+              </div>
+            </div>
+            <span class="form-label-top">Select Subject?</span>
+            <div class="subject-radios">
+              <label><input type="radio" name="subject" checked> General Inquiry</label>
+              <label><input type="radio" name="subject"> General Inquiry</label>
+              <label><input type="radio" name="subject"> General Inquiry</label>
+              <label><input type="radio" name="subject"> General Inquiry</label>
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Doe">
+              <label>Message</label>
+              <textarea placeholder="Write your message.."></textarea>
             </div>
+            <button class="btn-send">Send Message</button>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="">
-            </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" placeholder="+33 7 68 29 01 37">
-            </div>
-          </div>
-          <span class="form-label-top">Select Subject?</span>
-          <div class="subject-radios">
-            <label><input type="radio" name="subject" checked> General Inquiry</label>
-            <label><input type="radio" name="subject"> General Inquiry</label>
-            <label><input type="radio" name="subject"> General Inquiry</label>
-            <label><input type="radio" name="subject"> General Inquiry</label>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Write your message.."></textarea>
-          </div>
-          <button class="btn-send">Send Message</button>
-        </div>
+        </form>
+
       </div>
 
       <!-- ABOUT US -->
@@ -112,9 +116,9 @@
       </div>
     </div>
     <footer>
-    <a class="logo" href="home.html"><img src="../img/LOGO_EFREI-WEB_blanc.png" alt="Logo_Efrei_img" width="100" height="32"></a>
+    <a class="logo" href="../index.html"><img src="../img/LOGO_EFREI-WEB_blanc.png" alt="Logo_Efrei_img" width="100" height="32"></a>
     <ul>
-      <li><a href="home.html" >Home</a></li>
+      <li><a href="../index.html" >Home</a></li>
       <li><a href="contact.html">About Us</a></li>
     </ul>
     <span class="copy">© 2025 EFREI — Département Informatique</span>

@@ -1,7 +1,7 @@
 
 function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    var el = document.getElementById('page-' + id);
+    const el = document.getElementById('page-' + id);
     if (el) { el.classList.add('active'); }
     window.scrollTo(0,0);
     document.querySelectorAll('nav ul a').forEach(a => a.classList.remove('active'));
@@ -37,6 +37,13 @@ function showPage(id) {
     'FRI-16': [{cls:'event-pink',   t:'4:00 PM ●', b:'❤ Happy Hour'}],
     };
     var days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    const now = new Date();
+    const currentDay = days[now.getDay()];
+
+    var daylabel = document.querySelectorAll('.day-label');
+    if (daylabel[now.getDay()]) {
+        daylabel[now.getDay()].classList.add('today-header');
+    }
     var grid = document.getElementById('cal-grid');
     for (var hi = 0; hi < hours.length; hi++) {
         var hourNum = hi + 7;
@@ -46,7 +53,7 @@ function showPage(id) {
         grid.appendChild(timeEl);
         for (var di = 0; di < days.length; di++) {
             var cell = document.createElement('div');
-            cell.className = 'cal-cell' + (days[di]==='THU' ? ' today' : '');
+            cell.className = 'cal-cell' + (days[di]=== currentDay ? ' today' : '');
             var key = days[di] + '-' + hourNum;
             if (events[key]) {
                 events[key].forEach(function(ev) {

@@ -262,7 +262,7 @@
   .btn-black {
     display: inline-block;
     padding: 10px 22px;
-    background: var(--text-dark);
+    background: var(--dark-navy);
     color: var(--white);
     font-size: 14px;
     border-radius: 8px;
@@ -379,6 +379,7 @@
     position: relative;
   }
   .cal-cell.today { background: #f0f6ff; }
+  .day-label.today-header { background: #f0f6ff;}
   .event {
     position: absolute;
     left: 2px;
