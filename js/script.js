@@ -1,43 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const underline = document.querySelector('.nav-underline');
-    const items = document.querySelectorAll('.nav-item');
-    const activeItem = document.querySelector('.nav-item.active');
-
-    function moveUnderline(element) {
-        if (element) {
-            underline.style.left = element.offsetLeft + "px";
-            underline.style.width = element.offsetWidth + "px";
-        }
-    }
-
-    // Position initiale sur l'onglet actif au chargement
-    if (activeItem) {
-        moveUnderline(activeItem);
-    }
-
-    // Effet de glisse au survol (optionnel mais recommandé pour l'effet de glisse)
-    items.forEach(item => {
-        item.addEventListener('mouseenter', (e) => moveUnderline(e.target));
-    });
-
-    // Retour à l'onglet actif quand la souris quitte la nav
-    document.querySelector('nav ul').addEventListener('mouseleave', () => {
-        moveUnderline(activeItem);
-    });
-});
-    // Build calendar grid
-
+// Build calendar grid
 function buildCalendar() {
-        var container = document.querySelector('.planning');
-        if (!container) {
-            return;
-        }
 
-        var hours = [];
-        for (let h = 7; h <= 17; h++) {
-            hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
-        }
-        const events = {
+    var container = document.querySelector('.planning');
+    if (!container) {
+        return;
+    }
+
+    var hours = [];
+    for (let h = 7; h <= 17; h++) {
+        hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
+    }
+    const events = {
         'MON-8':  [{cls:'event-blue',   t:'8:00 AM ●', b:'Monday Wake-Up Hour',h:1}],
         'MON-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'All-Team Kickoff',h:1}],
         'MON-10': [{cls:'event-blue',   t:'10:00 AM ●',b:'Financial Update',h:1}],
@@ -58,49 +31,125 @@ function buildCalendar() {
         'FRI-12': [{cls:'event-green',  t:'12:00 PM ●',b:'😋 Marketing Meet-and-Greet',h:1}],
         'FRI-14': [{cls:'event-yellow', t:'2:00 PM ●', b:'1:1 with Heather',h:1}],
         'FRI-16': [{cls:'event-pink',   t:'4:00 PM ●', b:'❤ Happy Hour',h:1}],
-        };
-        const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-        const now = new Date();
-        const hour = now.getHours();
-        const minuteRatio = now.getMinutes()/60;
-        const displayHour = hour < 17;
-        const currentDay = days[now.getDay()];
+    };
+    const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    const now = new Date();
+    const hour = now.getHours();
+    const minuteRatio = now.getMinutes()/60;
+    const displayHour = hour < 17;
+    const currentDay = days[now.getDay()];
 
-        const daylabel = document.querySelectorAll('.day-label');
-        if (daylabel[now.getDay()]) {
-            daylabel[now.getDay()].classList.add('today-header');
-        }
-        var grid = document.getElementById('cal-grid');
-        for (var hi = 0; hi < hours.length; hi++) {
-            var hourNum = hi + 7;
-            var timeEl = document.createElement('div');
-            timeEl.className = 'time-label';
-            timeEl.textContent = hours[hi];
-            grid.appendChild(timeEl);
-            for (var di = 0; di < days.length; di++) {
-                var cell = document.createElement('div');
-                cell.className = 'cal-cell' + (days[di]=== currentDay ? ' today' : '');
-                var key = days[di] + '-' + hourNum;
-                if (events[key]) {
-                    events[key].forEach(function(ev) {
+    const daylabel = document.querySelectorAll('.day-label');
+    if (daylabel[now.getDay()]) {
+        daylabel[now.getDay()].classList.add('today-header');
+    }
+    var grid = document.getElementById('cal-grid');
+    for (var hi = 0; hi < hours.length; hi++) {
+        var hourNum = hi + 7;
+        var timeEl = document.createElement('div');
+        timeEl.className = 'time-label';
+        timeEl.textContent = hours[hi];
+        grid.appendChild(timeEl);
+        for (var di = 0; di < days.length; di++) {
+            var cell = document.createElement('div');
+            cell.className = 'cal-cell' + (days[di]=== currentDay ? ' today' : '');
+            var key = days[di] + '-' + hourNum;
+            if (events[key]) {
+                events[key].forEach(function(ev) {
                     var evEl = document.createElement('div');
                     evEl.className = 'event ' + ev.cls;
                     evEl.innerHTML = '<strong>' + ev.t + '</strong><br>' + ev.b;
                     evEl.style.top = '2px';
                     evEl.style.height = ev.h * 56 + "px";
                     cell.appendChild(evEl);
-                    });
-                }
-                if ((hour === hourNum) && (displayHour) && (cell.className === 'cal-cell today')){
-                    let hLine = document.createElement('div')
-                    hLine.className = 'cal-h-line';
-                    hLine.style.top = 56* minuteRatio + "px"
-                    cell.appendChild(hLine);
-                }
-                grid.appendChild(cell);
+                });
             }
+            if ((hour === hourNum) && (displayHour) && (cell.className === 'cal-cell today')){
+                let hLine = document.createElement('div')
+                hLine.className = 'cal-h-line';
+                hLine.style.top = 56* minuteRatio + "px"
+                cell.appendChild(hLine);
+            }
+            grid.appendChild(cell);
         }
+    }
 }
+
+function checkSubmit(){
+    const form = document.getElementById('myForm');
+    const feedback = document.getElementById("formFeedback")
+    form.addEventListener('submit', (event) => {event.preventDefault();})
+    const formData = new FormData(form);
+    var firstName = formData.get('firstname');
+    var lastName = formData.get('lastname');
+    var email = formData.get('email');
+    var phone = formData.get('phone');
+    var message = document.getElementById('message').value;
+    if (!firstName){
+        feedback.style.color = 'red';
+        feedback.textContent = 'Please enter your first name';
+    }else if (!lastName){
+        feedback.style.color = 'red';
+        feedback.textContent = 'Please enter your last name';
+    }else if (!phone || phone.length !== 10){
+        feedback.style.color = 'red';
+        feedback.textContent = 'Please enter a valid phone number';
+    }else if (!message){
+        feedback.style.color = 'red';
+        feedback.textContent = 'Please enter your message';
+    }else if (!email.includes('@gmail.') && !email.includes('@efrei.net')){
+        feedback.style.color = 'red';
+        feedback.textContent = 'Please enter a valid email';
+
+    }else{
+        feedback.style.color = 'green';
+        feedback.textContent = 'Thanks your message was successfully send !';
+    }
+}
+
+const phoneInput = document.getElementById('phone');
+
+if (phoneInput) {
+    phoneInput.addEventListener('keydown', (event) => {
+        // Allow: backspace, delete, tab, escape, and enter
+        const allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter'];
+        if (allowedKeys.includes(event.key)) return;
+
+        // Block if the character is not a digit
+        if (isNaN(event.key) || event.key === ' ') {
+            event.preventDefault();
+            document.getElementById("phoneInput").value--;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const underline = document.querySelector('.nav-underline');
+    const items = document.querySelectorAll('.nav-item');
+    const activeItem = document.querySelector('.nav-item.active');
+
+    function moveUnderline(element) {
+        if (element) {
+            underline.style.width = element.offsetWidth + 'px';
+            underline.style.left = element.offsetLeft + 'px';
+        }
+    }
+
+    // Position initiale sur l'onglet actif au chargement
+    if (activeItem) {
+        moveUnderline(activeItem);
+    }
+
+    // Effet de glisse au survol (optionnel mais recommandé pour l'effet de glisse)
+    items.forEach(item => {
+        item.addEventListener('mouseenter', (e) => moveUnderline(e.target));
+    });
+
+    // Retour à l'onglet actif quand la souris quitte la nav
+    document.querySelector('nav ul').addEventListener('mouseleave', () => {
+        moveUnderline(activeItem);
+    });
+});
 
 document.addEventListener('DOMContentLoaded', buildCalendar)
 

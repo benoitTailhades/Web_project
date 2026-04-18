@@ -649,6 +649,7 @@
       text-align: center;
       padding: 10px 0;
     }
+    .nav-underline {display:none;}
     .nav-item {
       padding: 5px;
     }
