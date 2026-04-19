@@ -1,5 +1,76 @@
-// Build calendar grid
-function buildCalendar() {
+
+async function loadEvents(){
+    try{
+        const response = await fetch("../json/office_hour.json")
+        if (!response.ok){
+            throw new Error("Could not fetch office hour data")
+        }
+        return await response.json();
+
+    }catch(error){
+        console.error("Error: "+error)
+    }
+}
+function displayEvents(events){
+    events.forEach(event => {
+        console.log(JSON.stringify(event));
+    })
+}
+function filterEvents(events, criteria) {
+    return events.filter(event => {
+        // On vérifie chaque critère. Si le critère n'est pas fourni (null/undefined), on laisse passer l'event.
+        const matchProf = !criteria.prof || event.teacher === criteria.prof;
+        const matchYear = !criteria.year || event.year === criteria.year;
+        const matchSemester = !criteria.semester || event.semester === criteria.semester;
+
+        return matchProf && matchYear && matchSemester;
+    });
+}
+function convertToCalendarEvents(data) {
+    const events = {};
+
+    const colors = [
+        "event-blue",
+        "event-green",
+        "event-yellow",
+        "event-red",
+        "event-purple"
+    ];
+
+    function formatHour(hour, min) {
+        let period = hour >= 12 ? "PM" : "AM";
+        let h = hour % 12;
+        if (h === 0) h = 12;
+        return `${h}:${min.toString().padStart(2, "0")} ${period} ●`;
+    }
+
+    data.forEach((event, index) => {
+        // Parse date: "MON-8-00"
+        const [day, hour, min] = event.date.split("-");
+        const h = parseInt(hour);
+        const m = parseInt(min);
+
+
+        const key = `${day}-${h}`;
+
+        const formattedEvent = {
+            cls: colors[index % colors.length], // couleur automatique
+            t: formatHour(h, m),
+            b: `${event.title} (${event.teacher})`,
+            h: event.duration
+        };
+
+        if (!events[key]) {
+            events[key] = [];
+        }
+
+        events[key].push(formattedEvent);
+    });
+
+    return events;
+}
+function buildCalendar(data) {
+    // Build calendar grid
 
     var container = document.querySelector('.planning');
     if (!container) {
@@ -10,28 +81,7 @@ function buildCalendar() {
     for (let h = 7; h <= 17; h++) {
         hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
     }
-    const events = {
-        'MON-8':  [{cls:'event-blue',   t:'8:00 AM ●', b:'Monday Wake-Up Hour',h:1}],
-        'MON-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'All-Team Kickoff',h:1}],
-        'MON-10': [{cls:'event-blue',   t:'10:00 AM ●',b:'Financial Update',h:1}],
-        'MON-11': [{cls:'event-blue',   t:'11:00 AM ●',b:'😋 New Employee Welcome Lunch!',h:1}],
-        'MON-13': [{cls:'event-blue',   t:'1:00 PM ●', b:'Design Review',h:1}],
-        'MON-14': [{cls:'event-yellow', t:'2:00 PM ●', b:'1:1 with Jon',h:1}],
-        'TUE-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'Design Review: Acme Marketi...',h:2}],
-        'TUE-12': [{cls:'event-green',  t:'12:00 PM ●',b:'😋 Design System Kickoff Lunch',h:1}],
-        'TUE-14': [{cls:'event-blue',   t:'2:00 PM ●', b:'Concept Design Review II',h:1}],
-        'TUE-16': [{cls:'event-red',    t:'4:00 PM ●', b:'🚀 Design Team Happy Hour',h:1}],
-        'WED-9':  [{cls:'event-purple', t:'9:00 AM ●', b:'Webinar: Figma ...',h:1}],
-        'WED-11': [{cls:'event-purple', t:'11:00 AM ●',b:'Onboarding Presentation',h:1}],
-        'WED-13': [{cls:'event-purple', t:'1:00 PM ●', b:'MVP Prioritization Workshop',h:1}],
-        'THU-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'☕ Coffee Chat',h:1}],
-        'THU-10': [{cls:'event-purple', t:'10:00 AM ●',b:'Health Benefits Walkthrough',h:1}],
-        'THU-13': [{cls:'event-blue',   t:'1:00 PM ●', b:'Design Review',h:2}],
-        'FRI-9':  [{cls:'event-blue',   t:'9:00 AM ●', b:'☕ Coffee Chat',h:1}],
-        'FRI-12': [{cls:'event-green',  t:'12:00 PM ●',b:'😋 Marketing Meet-and-Greet',h:1}],
-        'FRI-14': [{cls:'event-yellow', t:'2:00 PM ●', b:'1:1 with Heather',h:1}],
-        'FRI-16': [{cls:'event-pink',   t:'4:00 PM ●', b:'❤ Happy Hour',h:1}],
-    };
+    const events = convertToCalendarEvents(data);
     const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
     const now = new Date();
     const hour = now.getHours();
@@ -74,7 +124,6 @@ function buildCalendar() {
         }
     }
 }
-
 function checkSubmit(){
     const form = document.getElementById('myForm');
     const feedback = document.getElementById("formFeedback")
@@ -151,7 +200,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', buildCalendar)
+document.addEventListener('DOMContentLoaded', async () =>{
+    var events = await loadEvents();
+    const myCriteria = {
+        prof:"",
+        year:"",
+        semester:""
+    }
+    events = filterEvents(events, myCriteria);
+    buildCalendar(events);
+})
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById('hamburger');
