@@ -89,7 +89,7 @@
 
   /* ── FOOTER ── */
   footer {
-    background: var(--dark-navy);
+    background: var(--mid-navy);
     color: var(--white);
     padding: 32px 40px;
     display: flex;
@@ -115,9 +115,6 @@
     color: var(--white);
   }
 
-  /* ── PAGES ── */
-  .page { display: none; }
-  .page.active { display: block; }
 
   /* ── HOME PAGE ── */
   .home-hero {
@@ -216,12 +213,16 @@
     border-radius: 10px;
     padding: 20px;
     background: var(--white);
+    text-decoration: none;
+    color : inherit;
+
   }
   .testimonial-card p {
     font-size: 14px;
     color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: 20px;
+
   }
   .testimonial-author {
     display: flex;
@@ -347,6 +348,32 @@
   }
 
   /* ── PLANNING PAGE ── */
+  .filters {
+    padding: 50px 60px;
+  }
+  .filters h3 {
+    padding : 10px 0
+  }
+  #apply-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--dark-navy);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .selector {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--dark-navy);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .planning-content { padding: 40px 60px; }
   .planning-content h1 {
     font-size: 36px;

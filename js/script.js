@@ -16,6 +16,19 @@ function displayEvents(events){
         console.log(JSON.stringify(event));
     })
 }
+async function applyFilter() {
+    let events = await loadEvents();
+    const year = document.getElementById("filter-year").value;
+    const semester = document.getElementById("filter-semester").value;
+    const myCriteria = {
+        prof: "",
+        year: `${year !== "ALL" ? year : ""}`,
+        semester: `${semester !== "ALL" ? semester : ""}`,
+    }
+    events = filterEvents(events, myCriteria);
+    buildCalendar(events);
+
+}
 function filterEvents(events, criteria) {
     return events.filter(event => {
         // On vérifie chaque critère. Si le critère n'est pas fourni (null/undefined), on laisse passer l'event.
@@ -78,6 +91,8 @@ function buildCalendar(data) {
     }
 
     var hours = [];
+    var grid = document.getElementById('cal-grid');
+    grid.textContent = '';
     for (let h = 7; h <= 17; h++) {
         hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
     }
@@ -93,7 +108,6 @@ function buildCalendar(data) {
     if (daylabel[now.getDay()]) {
         daylabel[now.getDay()].classList.add('today-header');
     }
-    var grid = document.getElementById('cal-grid');
     for (var hi = 0; hi < hours.length; hi++) {
         var hourNum = hi + 7;
         var timeEl = document.createElement('div');
@@ -172,6 +186,7 @@ if (phoneInput) {
     });
 }
 
+// Animated Nav bar script
 document.addEventListener('DOMContentLoaded', () => {
     const underline = document.querySelector('.nav-underline');
     const items = document.querySelectorAll('.nav-item');
@@ -200,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Calendar script
 document.addEventListener('DOMContentLoaded', async () =>{
     var events = await loadEvents();
     const myCriteria = {
@@ -211,7 +227,7 @@ document.addEventListener('DOMContentLoaded', async () =>{
     buildCalendar(events);
 })
 
-
+// Animated Nav bar for mobile (Hamburger menu)
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
@@ -226,3 +242,108 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// Script for the dynamic Teacher pages
+document.addEventListener('DOMContentLoaded', () => {
+
+    // On cible le conteneur vide dans teachers.html
+    const container = document.getElementById('teachers-list');
+
+    // On vérifie qu'on est bien sur la bonne page avant d'exécuter le code
+    if (container) {
+
+        // On récupère le fichier JSON
+        fetch('../json/teacher_data.json')
+            .then(response => response.json())
+            .then(data => {
+
+                // On vide le conteneur au cas où
+                container.innerHTML = '';
+
+                // On boucle sur chaque professeur du fichier JSON
+                data.forEach(prof => {
+
+                    // On crée le HTML pour un professeur
+                    // Les ` (backticks) permettent d'écrire du HTML sur plusieurs lignes et d'insérer des variables avec ${}
+                    const profHTML = `
+                        <div class="teacher-row">
+                            <div class="text">
+                                <h2>${prof.nom}</h2>
+                                <p><strong>Formation :</strong> ${prof.formation}</p>
+                                <a class="btn-black" href="teacher_profile.html?id=${prof.id}">See profile</a>
+                            </div>
+                            <div class="teacher-img"><div class="dots-pattern"></div></div>
+                            <!-- <img src="${prof.photo}" alt="Photo de ${prof.nom}"> -->
+                            </div>
+                    `;
+
+                    // On ajoute ce code HTML à l'intérieur de notre conteneur
+                    container.innerHTML += profHTML;
+                });
+            })
+            .catch(error => console.error('Error while loading teachers data:', error));
+    }
+});
+
+document.addEventListener('DOMContentLoaded',()=> {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const teacherId = parseInt(urlParams.get('id'));
+    const container = document.getElementById('teacher_profile')
+    if (container) {
+        fetch('../json/teacher_data.json')
+            .then(response => response.json())
+            .then(data => {
+                container.innerHTML = '';
+                data.forEach(teacher => {
+                    if (teacher.id === teacherId) {
+                        container.innerHTML = `
+                        <div class="profile-hero">
+                            <div class="text">
+                                <h1>${teacher.nom}</h1>
+                                <p>${teacher.formation} teacher</p>
+                                <h2>Office hour</h2>
+                                <p>${teacher.office_hours}</p>
+                            </div>
+                            <div class="butterfly-img">
+                                <svg class="butterfly-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none">
+                                        <!-- butterfly wings in dotted style -->
+                                        <ellipse cx="70" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
+                                        <ellipse cx="130" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
+                                        <ellipse cx="75" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
+                                        <ellipse cx="125" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
+                                        <!-- body -->
+                                        <ellipse cx="100" cy="100" rx="6" ry="50" fill="#8878c8"/>
+                                        <!-- dots texture -->
+                                        <circle cx="60" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
+                                        <circle cx="80" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
+                                        <circle cx="55" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
+                                        <circle cx="140" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
+                                        <circle cx="120" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
+                                        <circle cx="145" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
+                                        <!-- antennae -->
+                                        <line x1="97" y1="52" x2="80" y2="30" stroke="#8878c8" stroke-width="1.5"/>
+                                        <line x1="103" y1="52" x2="120" y2="30" stroke="#8878c8" stroke-width="1.5"/>
+                                        <circle cx="80" cy="30" r="3" fill="#8878c8"/>
+                                        <circle cx="120" cy="30" r="3" fill="#8878c8"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile-cols">
+                <div>
+                    <h3>A subheader for some text</h3>
+                    <p>Writing for websites is both simple and complex. On the one hand, all you need to do is say what you mean, in your words, in your voice. One the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan?</p>
+                </div>
+                <div>
+                    <h3>A subheader for more text</h3>
+                    <p>Writing for websites is both simple and complex. On the one hand, all you need to do is say what you mean, in your words, in your voice. One the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan? There's a theory that people read in an F-shape pattern, and that this should influence how you structure content on your website. Lots of ins and outs—it's no wonder writers rule the world.</p>
+                </div>
+            </div>`
+                    }
+                })
+
+            })
+
+    }
+})

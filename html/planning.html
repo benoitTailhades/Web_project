@@ -33,6 +33,26 @@
     ════════════════════════════════════ -->
         <div class="planning-content">
             <h1>Planning</h1>
+            <!-- Filters -->
+            <div class="filters">
+                <h3>Filters</h3>
+                <label for="filter-year">Year</label>
+                <select class="selector" id="filter-year">
+                    <option value="ALL">ALL</option>
+                    <option value="P1">P1</option>
+                    <option value="P2">P2</option>
+                    <option value="ING1">ING1</option>
+                    <option value="ING2">ING2</option>
+                    <option value="ING3">ING3</option>
+                </select>
+                <label for="filter-semester">Semester</label>
+                <select  class="selector" id="filter-semester">
+                    <option value="ALL">ALL</option>
+                    <option value="S1">S1</option>
+                    <option value="S2">S2</option>
+                </select>
+                <button id="apply-btn" onclick="applyFilter()">Apply</button>
+            </div>
             <div class="calendar-wrap">
                 <div class="cal-header">
                     <div></div>
