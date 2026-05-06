@@ -1,74 +1,82 @@
 [
   {
     "id": 1,
-    "nom": "John Doe",
+    "nom": "Chris P. Bacon",
     "formation": "Web Programming",
     "photo": "../img/teachers/john_doe.jpg",
     "biographie": "Fullstack development expert with 10 years of experience. Passionate about modern front-end technologies such as React and Vue.",
     "office_hours": "Monday 08:00 - 09:30",
-    "email": "john.doe@efrei.net"
+    "email": "john.doe@efrei.net",
+    "article_id": []
   },
   {
     "id": 2,
-    "nom": "Alice Martin",
+    "nom": "Artie Choke",
     "formation": "Algorithmics",
     "photo": "../img/teachers/alice_martin.jpg",
     "biographie": "Researcher in distributed algorithms. She teaches programming fundamentals and code optimization to first-year students.",
     "office_hours": "Tuesday 10:30 - 12:30",
-    "email": "alice.martin@efrei.net"
+    "email": "alice.martin@efrei.net",
+    "article_id": []
   },
   {
     "id": 3,
-    "nom": "Robert Klein",
+    "nom": "Pete Sza",
     "formation": "Databases",
     "photo": "../img/teachers/robert_klein.jpg",
     "biographie": "SQL and NoSQL specialist. Robert has worked on large-scale data management systems for major tech companies.",
     "office_hours": "Wednesday 14:00 - 15:00",
-    "email": "robert.klein@efrei.net"
+    "email": "robert.klein@efrei.net",
+    "article_id": []
   },
   {
     "id": 4,
-    "nom": "Sophie Bernard",
+    "nom": "Barb Dwyer",
     "formation": "Python & Data Science",
     "photo": "../img/teachers/sophie_bernard.jpg",
     "biographie": "Sophie guides students in discovering Python and its applications in artificial intelligence and data analysis.",
     "office_hours": "Thursday 09:30 - 11:00",
-    "email": "sophie.bernard@efrei.net"
+    "email": "sophie.bernard@efrei.net",
+    "article_id": []
   },
   {
     "id": 5,
-    "nom": "Michael Anderson",
+    "nom": "Sue Flay",
     "formation": "Cybersecurity",
     "photo": "../img/teachers/michael_anderson.jpg",
     "biographie": "Cybersecurity expert specializing in network protection and ethical hacking. He has worked with international security agencies.",
     "office_hours": "Friday 13:00 - 15:00",
-    "email": "michael.anderson@efrei.net"
+    "email": "michael.anderson@efrei.net",
+    "article_id": []
   },
   {
     "id": 6,
-    "nom": "Emma Wilson",
+    "nom": "Pepe Roni",
     "formation": "Software Engineering",
     "photo": "../img/teachers/emma_wilson.jpg",
     "biographie": "Software engineer with a strong background in system architecture and agile methodologies. She mentors students on real-world projects.",
     "office_hours": "Monday 11:00 - 12:30",
-    "email": "emma.wilson@efrei.net"
+    "email": "emma.wilson@efrei.net",
+    "article_id": []
   },
   {
     "id": 7,
-    "nom": "David Chen",
+    "nom": "Alexis Chen",
     "formation": "Artificial Intelligence",
     "photo": "../img/teachers/david_chen.jpg",
     "biographie": "AI researcher focused on machine learning and neural networks. He has published several papers in top AI conferences.",
     "office_hours": "Tuesday 15:00 - 17:00",
-    "email": "david.chen@efrei.net"
+    "email": "david.chen@efrei.net",
+    "article_id": []
   },
   {
     "id": 8,
-    "nom": "Laura Garcia",
+    "nom": "Robin Banks",
     "formation": "Mobile Development",
     "photo": "../img/teachers/laura_garcia.jpg",
     "biographie": "Mobile app developer specializing in iOS and Android. She helps students build and deploy their own applications.",
     "office_hours": "Thursday 13:00 - 14:30",
-    "email": "laura.garcia@efrei.net"
+    "email": "laura.garcia@efrei.net",
+    "article_id": []
   }
 ]
