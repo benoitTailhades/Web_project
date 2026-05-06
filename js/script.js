@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error while loading teachers data:', error));
     }
 });
-
+// Script for dynamic Teacher profile page
 document.addEventListener('DOMContentLoaded',()=> {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                         <div class="profile-cols">
                 <div>
                     <h3>A subheader for some text</h3>
-                    <p>Writing for websites is both simple and complex. On the one hand, all you need to do is say what you mean, in your words, in your voice. One the other, there are so many rules to consider! Are you thinking of keywords you should rank for? Are you including links in your text to additional information? Do those links refer back to your own website, which helps boost your SEO? Is what you've written easy to scan?</p>
+                    <p>${teacher.biographie}</p>
                 </div>
                 <div>
                     <h3>A subheader for more text</h3>
@@ -346,4 +346,57 @@ document.addEventListener('DOMContentLoaded',()=> {
             })
 
     }
+})
+//Script for dynamic Research page
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('research-list')
+
+    if (container) {
+        fetch('../json/articles_data.json')
+            .then(response => response.json())
+            .then(data => {
+
+                // On vide le conteneur au cas où
+                container.innerHTML = '';
+
+                // On boucle sur chaque professeur du fichier JSON
+                data.forEach(article => {
+
+                    // On crée le HTML pour un professeur
+                    // Les ` (backticks) permettent d'écrire du HTML sur plusieurs lignes et d'insérer des variables avec ${}
+                    const articleHTML = `
+                        <div class="research-card">
+                           <!-- <img src="${article.image}"--> 
+                           <div class="research-img">
+                            <div class="starburst">
+                              <svg class="starburst-svg" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(60,40)">
+                                  <circle r="18" fill="#1a7aaa"/>
+                                  <line x1="0" y1="-38" x2="0" y2="38" stroke="#1a7aaa" stroke-width="6"/>
+                                  <line x1="-38" y1="0" x2="38" y2="0" stroke="#1a7aaa" stroke-width="6"/>
+                                  <line x1="-27" y1="-27" x2="27" y2="27" stroke="#1a7aaa" stroke-width="5"/>
+                                  <line x1="27" y1="-27" x2="-27" y2="27" stroke="#1a7aaa" stroke-width="5"/>
+                                  <line x1="-10" y1="-36" x2="10" y2="36" stroke="#1a7aaa" stroke-width="4"/>
+                                  <line x1="10" y1="-36" x2="-10" y2="36" stroke="#1a7aaa" stroke-width="4"/>
+                                  <line x1="-36" y1="-10" x2="36" y2="10" stroke="#1a7aaa" stroke-width="4"/>
+                                  <line x1="36" y1="-10" x2="-36" y2="10" stroke="#1a7aaa" stroke-width="4"/>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                           <div class="info">
+                            <h3>${article.title}</h3>
+                            <p>${article.description}</p>
+                            <a href="article.html">See Article</a>
+                            <!--<a href="${article.article_page}">See Article</a>-->
+                          </div>
+                        </div>
+                    `;
+
+                    container.innerHTML += articleHTML;
+                });
+            })
+            .catch(error => console.error('Error while loading teachers data:', error));
+    }
+
 })

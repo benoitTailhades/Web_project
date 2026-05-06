@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title" :"Title place holder",
+    "image": "../img/articl/Title",
+    "description": "Description place holder",
+    "authors": "Authors place holder",
+    "article_page": "article/title.html"
+  },
+  {
+    "id": 2,
+    "title" :"Title place holder",
+    "image": "../img/articl/Title",
+    "description": "Description place holder",
+    "authors": "Authors place holder",
+    "article_page": "article/title.html"
+  },
+  {
+    "id": 3,
+    "title" :"Title place holder",
+    "image": "../img/articl/Title",
+    "description": "Description place holder",
+    "authors": "Authors place holder",
+    "article_page": "article/title.html"
+  },
+  {
+    "id": 4,
+    "title" :"Title place holder",
+    "image": "../img/articl/Title",
+    "description": "Description place holder",
+    "authors": "Authors place holder",
+    "article_page": "article/title.html"
+  }
+]
