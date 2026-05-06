@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Green IT - Quiz</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="https://www.voxtraditionis.com/">
+            <img src="../img/img.png" alt="GreenIT_img" width="150">
+        </a>
+        <nav>
+            <a href="./Home.html">Home</a>
+            <a href="./GreenITSiteWeb.html">Green IT & websites</a>
+            <a href="./QuizGreenIT.html">Green IT - Quiz</a>
+            <a href="./about.html">About</a>
+        </nav>
+    </header>
+
+    <form method="post" name="Quiz" action="#" class="box" id="Quizld" onsubmit="return false">
+        <fieldset id="information">
+            <legend>Your information</legend>
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" />
+            </p>
+            <p>
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" />
+            </p>
+            <p>
+                <label for="birth">Birth date:</label>
+                <input type="date" id="birth" name="user_birth_date" />
+            </p>
+            <p>
+                <label for="email">Mail address:</label>
+                <input type="email" id="email" name="mail" />
+            </p>
+            <p>
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="">Select your status</option>
+                    <option value="student">Student</option>
+                    <option value="professional">Professional</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            <input type="button" id="startBtn" value="Start quiz" onclick="quizAlert()">
+        </fieldset>
+
+        <fieldset class="quiz">
+            <legend>Quiz - Green IT</legend>
+            <ol>
+                <li>What is Green IT ?</li>
+                <p>
+                    <input type="radio" id="a" name="q1" value="A" />
+                    <label for="a">A) A practice aimed at reducing the environmental impact of information technologies.</label>
+                </p>
+                <p>
+                    <input type="radio" id="b" name="q1" value="B" />
+                    <label for="b">B) A system for recycling old computers.</label>
+                </p>
+                <p>
+                    <input type="radio" id="c" name="q1" value="C" />
+                    <label for="c">C) A method for increasing the energy consumption of servers.</label>
+                </p>
+
+                <li>What is the main objective of Green IT ?</li>
+                <p>
+                    <input type="checkbox" id="q2_1" name="q2" value="A" />
+                    <label for="q2_1">A) Reduce energy consumption.</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="q2_2" name="q2" value="B" />
+                    <label for="q2_2">B) Minimise electronic waste.</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="q2_3" name="q2" value="C" />
+                    <label for="q2_3">C) Optimising the performance of electronic devices.</label>
+                </p>
+
+                <li>Give an example of a Green IT practice:</li>
+                <p>
+                    <textarea id="Q3" name="Q3" rows="8" cols="80"></textarea>
+                </p>
+            </ol>
+        </fieldset>
+        <button class="quiz" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <main class="box">
+        <table id="result">
+            <caption>Quiz results</caption>
+            <thead>
+                <tr>
+                    <th>Attempt</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>©️2024 Maha Naceur.</p>
+        <p>All rights reserved.</p>
+        <a href="https://greenit.net/">Find out more ?</a>
+    </footer>
+</body>
+</html>

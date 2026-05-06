@@ -1,0 +1,366 @@
+body {
+    background-color: #f0f8f0;
+    font-family: cursive, sans-serif;
+    text-align: center;
+}
+
+header, footer {
+    background-image: url('../img/img_1.png');
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+ul, ol {
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+h1 { color: #2e7d32; }
+
+section h2 { color: #388e3c; }
+
+h2 + h3 { color: #66bb6a; }
+
+nav {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+nav a:first-child:hover {
+    color: yellow;
+    background-color: #1b5e20;
+}
+
+nav a:nth-child(2):hover {
+    color: orange;
+    background-color: #2e7d32;
+}
+
+nav a:nth-child(3):hover {
+    color: yellow;
+    background-color: #388e3c;
+}
+
+nav a:nth-child(4):hover {
+    color: orange;
+    background-color: #1b5e20;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border-radius: 15px;
+}
+
+a:hover {
+    background-color: #a9ebba;
+}
+
+section a {
+    color: #95b7cf;
+    font-style: italic;
+}
+
+header img {
+    width: 50%;
+    height: auto;
+    border-radius: 1000px;
+}
+#definition {
+    color: blue;
+    font-style: italic
+
+}
+#citation {
+    color: red;
+    font-style: italic
+}
+#postit {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.postit-item {
+    background-color: #fff9c4;
+    border: 2px solid #f9a825;
+    position: relative;
+    padding: 15px;
+    margin: 10px;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.postit-item ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 10;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.postit-item:hover ul {
+    display: block;
+}
+
+.postit-item ul li {
+    color: #2e7d32;
+    padding: 8px 12px;
+}
+
+.postit-item ul li:hover {
+    background-color: #f0f8f0;
+}
+
+.postit-item:nth-child(1) { background-color: #fff9c4; border-color: #f9a825; }
+.postit-item:nth-child(2) { background-color: #c8e6c9; border-color: #388e3c; }
+.postit-item:nth-child(3) { background-color: #bbdefb; border-color: #1565c0; }
+.postit-item:nth-child(4) { background-color: #f8bbd0; border-color: #c62828; }
+.postit-item:nth-child(5) { background-color: #e1bee7; border-color: #6a1b9a; }
+
+
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+caption {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top:25px
+}
+
+table, td, th {
+    border: 1px solid #388e3c;
+}
+
+thead, tfoot {
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+thead th {
+    padding: 10px;
+}
+
+tbody tr {
+    background-color: #f0f8f0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #c8e6c9;
+}
+
+td {
+    padding: 10px;
+}
+
+form, .box {
+    width: 80%;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+fieldset {
+    border: 2px solid #388e3c;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend {
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+form p {
+    margin: 10px 0;
+    text-align: left;
+}
+
+label {
+    color: #2e7d32;
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 6px 10px;
+    border: 1px solid #388e3c;
+    border-radius: 8px;
+    background-color: #f0f8f0;
+    color: #333;
+    width: 250px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1b5e20;
+    background-color: #e8f5e9;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #2e7d32;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+textarea {
+    border: 1px solid #388e3c;
+    border-radius: 8px;
+    background-color: #f0f8f0;
+    padding: 8px;
+    font-family: cursive, sans-serif;
+    width: 95%;
+}
+
+.quiz {
+    display: none;
+}
+
+input[type="button"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* --- CHATBOT STYLES --- */
+.chatbot-section {
+    background-color: #ffffff;
+    border: 2px solid #388e3c;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+#chat-box {
+    height: 300px;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f0f8f0;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#user-input {
+    flex-grow: 1;
+    width: auto;
+    margin: 0;
+}
+
+.send-btn {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 75%;
+    display: inline-block;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.message.user {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.message.bot {
+    background-color: #ffffff;
+    color: #2e7d32;
+    border: 1px solid #a9ebba;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.message-meta {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    opacity: 0.7;
+    text-align: right;
+}
+
+.history-separator {
+    text-align: center;
+    color: #66bb6a;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    font-style: italic;
+    border-bottom: 1px dashed #66bb6a;
+    line-height: 0.1em;
+}
+
+.history-separator::after {
+    background: #f0f8f0;
+    padding: 0 10px;
+}
