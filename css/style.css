@@ -680,6 +680,7 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   .nav-item {
     padding: 5px;
   }
+
   .nav-item.active::after {
     bottom: 0px;
   }
