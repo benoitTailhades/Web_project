@@ -1,0 +1,55 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good evening"
+      ],
+        "responses": [
+        "Hello! How can I help you with Green IT today?",
+        "Hi there! Ask me anything about sustainable coding.",
+        "Welcome! What would you like to know about Green IT?"
+      ]
+    },
+    {
+      "tag": "greenit",
+      "patterns": [
+        "what is green it",
+        "define green it",
+        "explain green it",
+        "green it"
+      ],
+      "responses": [
+        "Green IT encompasses the study and practice of environmentally sustainable computing or IT. It involves reducing the carbon footprint and energy consumption of IT systems.",
+        "Green IT is the practice of environmentally sustainable computing. It aims to minimize the negative impact of IT operations on the environment."
+      ]
+    },
+    {
+      "tag": "practices",
+      "patterns": [
+        "practices",
+        "how to",
+        "tips",
+        "optimize",
+        "reduce energy"
+      ],
+      "responses": [
+        "Some good practices include: optimizing algorithms, minimizing CPU operations, memory optimization, exploiting caching, and reducing network requests.",
+        "You can reduce energy by compressing images, cleaning up unused code/plugins, and optimizing your server."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I'm not sure I understand. Could you please rephrase?",
+        "I didn't quite catch that. Can you try asking in a different way?",
+        "My apologies, I don't have an answer for that yet."
+      ]
+    }
+  ]
+}
