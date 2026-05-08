@@ -169,6 +169,15 @@ function checkSubmit(){
         feedback.textContent = 'Thanks your message was successfully send !';
     }
 }
+// Fonction pour faire défiler le carrousel (attachée aux boutons onclick)
+function scrollCarousel(year, direction) {
+    const track = document.getElementById(`track-${year}`);
+    if (track) {
+        // On scrolle de la largeur visible du conteneur (ou de la largeur d'une carte)
+        const scrollAmount = track.clientWidth *1.05;
+        track.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+}
 
 const phoneInput = document.getElementById('phone');
 
@@ -400,3 +409,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 })
+
+// Script for dynamic Formations page (Carousels)
+document.addEventListener('DOMContentLoaded', () => {
+    const formationsContainer = document.getElementById('formations-container');
+
+    if (formationsContainer) {
+        fetch('../json/formations_data.json')
+            .then(response => response.json())
+            .then(data => {
+                // 1. Grouper les cours par année
+                const groupedByYear = data.reduce((acc, course) => {
+                    if (!acc[course.years]) {
+                        acc[course.years] = [];
+                    }
+                    acc[course.years].push(course);
+                    return acc;
+                }, {});
+
+                // 2. Définir l'ordre d'affichage souhaité
+                const yearsOrder = ["P1", "P2", "ING1", "ING2", "ING3"];
+
+                // 3. Vider le conteneur
+                formationsContainer.innerHTML = '';
+
+                // 4. Générer le HTML pour chaque année
+                yearsOrder.forEach(year => {
+                    if (groupedByYear[year] && groupedByYear[year].length > 0) {
+
+                        // Création du HTML pour les cartes de cette année
+                        const cardsHTML = groupedByYear[year].map(course => `
+                            <a class="testimonial-card" href="syllabus.html?id=${course.id}">
+                                <div class="card-image-container">
+                                    <img src="${course.course_image}" alt="${course.course_name}" class="card-img" onerror="this.src='https://placehold.co/600x400/png'">
+                                </div>
+                                <div class="card-content">
+                                    <p class="formation-name">${course.course_code} - ${course.course_name}</p>
+                                </div>
+                            </a>
+                        `).join('');
+
+                        // Création de la section complète avec le carrousel
+                        const sectionHTML = `
+                            <div class="formation-section" id="${year}">
+                                <h2>${year}</h2>
+                                <div class="carousel-wrapper">
+                                    <button class="carousel-btn prev" onclick="scrollCarousel('${year}', -1)">&#10094;</button>
+                                    
+                                    <div class="carousel-track" id="track-${year}">
+                                        ${cardsHTML}
+                                    </div>
+                                    
+                                    <button class="carousel-btn next" onclick="scrollCarousel('${year}', 1)">&#10095;</button>
+                                </div>
+                            </div>
+                        `;
+
+                        formationsContainer.innerHTML += sectionHTML;
+                    }
+                });
+            })
+            .catch(error => console.error('Erreur lors du chargement des formations:', error));
+    }
+});
+
+

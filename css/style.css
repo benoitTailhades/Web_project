@@ -271,6 +271,55 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
 .carousel-btn:hover {
   background-color: #1a252f;
 }
+/* ── CAROUSEL FORMATIONS ── */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 10px 0;
+  /* Masquer la scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* On s'assure que les cartes gardent la bonne largeur (environ 3 par ligne sur desktop) */
+.carousel-track .testimonial-card {
+  min-width: calc(33.333% - 11px);
+  flex-shrink: 0;
+}
+
+/* Boutons précédent / suivant */
+.carousel-btn.prev {
+  position: absolute;
+  left: -20px;
+}
+
+.carousel-btn.next {
+  position: absolute;
+  right: -20px;
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 1000px) {
+  .carousel-track .testimonial-card {
+    min-width: 100%; /* 1 carte par ligne sur mobile */
+  }
+  .carousel-btn.prev { left: 0px; }
+  .carousel-btn.next { right: 0px; }
+}
 
 .avatar-circle {
   width: 36px;
@@ -294,6 +343,8 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   font-size: 12px;
   color: var(--text-gray);
 }
+
+
 
 /* ── TEACHERS PAGE ── */
 .teachers-content { padding: 50px 60px; }
