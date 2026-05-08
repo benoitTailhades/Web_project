@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "course_code": "T1402",
+    "course_name": "Web Programming 1: HTML, CSS, JS",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P2"
+  },
+  {
+    "id": 2,
+    "course_code": "T1403",
+    "course_name": "Java 1: Fundamentals of OOP",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P1"
+  },
+  {
+    "id": 3,
+    "course_code": "T1404",
+    "course_name": "Database 1: Basic Concepts",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING1"
+  },
+  {
+    "id": 4,
+    "course_code": "T1405",
+    "course_name": "Algorithmics and Data Structures",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P1"
+  },
+  {
+    "id": 5,
+    "course_code": "M1401",
+    "course_name": "Discrete Mathematics",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P1"
+  },
+  {
+    "id": 6,
+    "course_code": "T1406",
+    "course_name": "Computer Architecture",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P2"
+  },
+  {
+    "id": 7,
+    "course_code": "M1402",
+    "course_name": "Probability and Statistics",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "P2"
+  },
+  {
+    "id": 8,
+    "course_code": "T1501",
+    "course_name": "Computer Networks: OSI Model",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING1"
+  },
+  {
+    "id": 9,
+    "course_code": "T1502",
+    "course_name": "Advanced C++ Programming",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING1"
+  },
+  {
+    "id": 10,
+    "course_code": "T1601",
+    "course_name": "Artificial Intelligence & Machine Learning",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING2"
+  },
+  {
+    "id": 11,
+    "course_code": "T1602",
+    "course_name": "Cybersecurity: Systems Security",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING2"
+  },
+  {
+    "id": 12,
+    "course_code": "T1603",
+    "course_name": "Mobile Application Development",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING2"
+  },
+  {
+    "id": 13,
+    "course_code": "T1701",
+    "course_name": "Cloud Computing and Micro-services",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING3"
+  },
+  {
+    "id": 14,
+    "course_code": "T1702",
+    "course_name": "IT Project Management",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING3"
+  },
+  {
+    "id": 15,
+    "course_code": "T1703",
+    "course_name": "Big Data: Architecture and Scalability",
+    "course_image": "../img/course/course_code.png",
+    "course_data": [],
+    "years": "ING3"
+  }
+]

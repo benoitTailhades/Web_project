@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title" :"Title place holder",
-    "image": "../img/articl/Title",
+    "image": "../img/article/Title",
     "description": "Description place holder",
     "authors": "Authors place holder",
     "article_page": "article/title.html"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title" :"Title place holder",
-    "image": "../img/articl/Title",
+    "image": "../img/article/Title",
     "description": "Description place holder",
     "authors": "Authors place holder",
     "article_page": "article/title.html"
