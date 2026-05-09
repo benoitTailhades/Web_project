@@ -163,10 +163,18 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   padding: 60px 60px;
 }
 .feature-card {
+  display:flex;
+  flex-direction: column;
   background: var(--bg-light);
   border-radius: 16px;
   padding: 28px 24px;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 .feature-card h3 {
   font-size: 18px;
