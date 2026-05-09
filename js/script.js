@@ -431,46 +431,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 // Script for dynamic Teacher profile page
-document.addEventListener('DOMContentLoaded',()=> {
+document.addEventListener('DOMContentLoaded', () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const teacherId = parseInt(urlParams.get('id'));
-    const container = document.getElementById('teacher_profile')
+    const container = document.getElementById('teacher_profile');
+
     if (container) {
-        fetch('../json/teacher_data.json')
-            .then(response => response.json())
-            .then(data => {
+        // On utilise Promise.all pour récupérer les deux fichiers JSON simultanément
+        Promise.all([
+            fetch('../json/teacher_data.json').then(response => response.json()),
+            fetch('../json/articles_data.json').then(response => response.json())
+        ])
+            .then(([teachersData, articlesData]) => {
                 container.innerHTML = '';
-                data.forEach(teacher => {
-                    if (teacher.id === teacherId) {
-                        container.innerHTML = `
-                        <div class="profile-hero">
-                            <div class="text">
-                                <h1>${teacher.nom}</h1>
-                                <p>${teacher.formation} teacher</p>
-                                <h2>Office hour</h2>
-                                <p>${teacher.office_hours}</p>
-                            </div>
-                            <div class="butterfly-img">
-                                <img src="${teacher.photo}" alt="Photo de ${teacher.nom}">
-                            </div>
-                        </div>
-                        <div class="profile-cols">
-                <div>
-                    <h3>Biographie</h3>
-                    <p>${teacher.biographie}</p>
-                </div>
-                <div>
-                    <h3>See Articles →</h3>
-                </div>
-            </div>`
+
+                // On cherche le professeur correspondant à l'ID
+                const teacher = teachersData.find(t => t.id === teacherId);
+
+                if (teacher) {
+                    // On filtre les articles pour ne garder que ceux écrits par ce professeur
+                    const teacherArticles = articlesData.filter(article =>
+                        teacher.article_id && teacher.article_id.includes(article.id)
+                    );
+
+                    // On génère le code HTML pour la liste des articles
+                    let articlesHTML = '';
+                    if (teacherArticles.length > 0) {
+                        // Si le prof a des articles, on crée une liste de liens
+                        articlesHTML = '<ul>' + teacherArticles.map(article => `
+                        <li style="margin-bottom: 10px;">
+                            <a href="${article.article_page}" style="color: var(--text-dark); font-weight: bold; text-decoration: none;">
+                                ${article.title}
+                            </a>
+                            <br>
+                            <span style="font-size: 13px; color: var(--text-gray);">${article.description}</span>
+                        </li>
+                    `).join('') + '</ul>';
+                    } else {
+                        // Si le tableau article_id est vide
+                        articlesHTML = '<p style="color: var(--text-gray); font-style: italic;">No articles published yet.</p>';
                     }
-                })
 
+                    // On injecte le tout dans la page
+                    container.innerHTML = `
+                <div class="profile-hero">
+                    <div class="text">
+                        <h1>${teacher.nom}</h1>
+                        <p>${teacher.formation} teacher</p>
+                        <h2>Office hour</h2>
+                        <p>${teacher.office_hours}</p>
+                    </div>
+                    <div class="butterfly-img">
+                        <img src="${teacher.photo}" alt="Photo de ${teacher.nom}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+                </div>
+                <div class="profile-cols">
+                    <div>
+                        <h3>Biographie</h3>
+                        <p>${teacher.biographie}</p>
+                    </div>
+                    <div>
+                        <h3>See Articles →</h3>
+                        ${articlesHTML}
+                    </div>
+                </div>`;
+                } else {
+                    container.innerHTML = '<p>Teacher not found.</p>';
+                }
             })
-
+            .catch(error => console.error("Error fetching data:", error));
     }
-})
+});
 //Script for dynamic Research page
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('research-list')
