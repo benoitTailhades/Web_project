@@ -381,8 +381,9 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
 }
 .teacher-img {
   border-radius: 16px;
-  height: 590px;
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
   background: linear-gradient(135deg, #c8f0e8, #00b8c8);
   overflow: hidden;
   display: flex;
@@ -428,8 +429,9 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   margin-bottom: 12px;
 }
 .butterfly-img {
-  height: 590px;
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
   background: transparent;
   border-radius: 12px;
   display: flex;
@@ -940,6 +942,8 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   .syllabus-body { grid-template-columns: 1fr; }
   .syllabus-meta-bar { gap: 20px; }
   .outcomes-grid { grid-template-columns: 1fr; }
+  .teacher-img,
+  .butterfly-img {width: 80%;}
 }
 
 /* ── CONTACT PAGE ── */
