@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "course_code": "T1402",
+    "course_code": "TI402I",
     "course_name": "Web Programming 1: HTML, CSS, JS",
     "course_image": "../img/FormationImages/WebPro.jpg",
     "years": "P2",
@@ -32,7 +32,7 @@
   },
   {
     "id": 2,
-    "course_code": "T1403",
+    "course_code": "TI101I",
     "course_name": "Programming in Python",
     "course_image": "../img/FormationImages/Python.png",
     "years": "P1",
@@ -63,7 +63,7 @@
   },
   {
     "id": 4,
-    "course_code": "T1405",
+    "course_code": "TI202I",
     "course_name": "Algorithmics and Data Structures I",
     "course_image": "../img/FormationImages/C.png",
     "years": "P1",
@@ -94,7 +94,7 @@
   },
   {
     "id": 5,
-    "course_code": "T1406",
+    "course_code": "TI102I",
     "course_name": "Algorithmics",
     "course_image": "../img/FormationImages/Algorithmic.png",
     "years": "P1",
@@ -125,7 +125,7 @@
   },
   {
     "id": 6,
-    "course_code": "T1407",
+    "course_code": "TI205I",
     "course_name": "Complexity",
     "course_image": "../img/FormationImages/Complexity.png",
     "years": "P1",
@@ -156,7 +156,7 @@
   },
   {
     "id": 7,
-    "course_code": "T1408",
+    "course_code": "TI301I",
     "course_name": "Data Structures and Algorithmics II",
     "course_image": "../img/FormationImages/AdvancedC.png",
     "years": "P2",
@@ -187,7 +187,7 @@
   },
   {
     "id": 8,
-    "course_code": "T1409",
+    "course_code": "TI307I",
     "course_name": "Introduction to Linux",
     "course_image": "../img/FormationImages/Linux.png",
     "years": "P2",
@@ -218,7 +218,7 @@
   },
   {
     "id": 9,
-    "course_code": "T1410",
+    "course_code": "TI305I",
     "course_name": "Network Architecture",
     "course_image": "../img/FormationImages/CompArch.png",
     "years": "P2",
@@ -249,7 +249,7 @@
   },
   {
     "id": 10,
-    "course_code": "M1402",
+    "course_code": "TI404I",
     "course_name": "Introduction to Databases",
     "course_image": "../img/FormationImages/Database.png",
     "years": "P2",
@@ -280,7 +280,7 @@
   },
   {
     "id": 19,
-    "course_code": "M1403",
+    "course_code": "TI403I",
     "course_name": "OOP with Java",
     "course_image": "../img/FormationImages/Java.png",
     "years": "P2",
@@ -590,7 +590,7 @@
   },
   {
     "id": 21,
-    "course_code": "T1601",
+    "course_code": "TI601",
     "course_name": "Artificial Intelligence & Machine Learning",
     "course_image": "../img/FormationImages/AIAndML.png",
     "years": "ING2",
@@ -621,7 +621,7 @@
   },
   {
     "id": 22,
-    "course_code": "T1602",
+    "course_code": "TI602",
     "course_name": "Cybersecurity: Systems Security",
     "course_image": "../img/FormationImages/SystemSec.png",
     "years": "ING2",
@@ -652,7 +652,7 @@
   },
   {
     "id": 23,
-    "course_code": "T1603",
+    "course_code": "TI603",
     "course_name": "Mobile Application Development",
     "course_image": "../img/FormationImages/MobileApp.png",
     "years": "ING2",
@@ -685,7 +685,7 @@
   },
   {
     "id": 24,
-    "course_code": "T1701",
+    "course_code": "TI701",
     "course_name": "Cloud Computing and Micro-services",
     "course_image": "../img/FormationImages/CloudAndMicro.png",
     "years": "ING3",
@@ -716,7 +716,7 @@
   },
   {
     "id": 25,
-    "course_code": "T1702",
+    "course_code": "TI702",
     "course_name": "IT Project Management",
     "course_image": "../img/FormationImages/ITManagement.png",
     "years": "ING3",
@@ -747,7 +747,7 @@
   },
   {
     "id": 26,
-    "course_code": "T1703",
+    "course_code": "TI703",
     "course_name": "Big Data: Architecture and Scalability",
     "course_image": "../img/FormationImages/BigDataArch.png",
     "years": "ING3",
