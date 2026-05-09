@@ -195,6 +195,143 @@ if (phoneInput) {
     });
 }
 
+/* ── Helpers ── */
+function notFound(msg) {
+    return `<div class="syllabus-loader">${msg}</div>`;
+}
+
+function initials(name) {
+    return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
+/* ── Constructeur HTML principal ── */
+function buildSyllabus(course) {
+    const d  = course.course_data;
+    const ov = d.overview;
+
+    // Évaluation : trier par poids décroissant
+    const evalEntries = Object.entries(d.evaluation)
+        .map(([k, v]) => ({ label: k.replace(/_/g, ' '), pct: parseInt(v) }))
+        .sort((a, b) => b.pct - a.pct);
+
+    return `
+    <!-- ── HERO ── -->
+    <div class="syllabus-hero">
+      <a class="back-link" href="formations.html">&#8592; Back to Formations</a>
+      <span class="course-code-badge">${course.course_code}</span>
+      <h1>${course.course_name}</h1>
+      <p class="hero-summary">${ov.summary}</p>
+    </div>
+
+    <!-- ── META BAR ── -->
+    <div class="syllabus-meta-bar">
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value"><span>${course.years}</span></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Credits</span>
+        <span class="meta-value"><span>${ov.credits}</span> ECTS</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Total Hours</span>
+        <span class="meta-value"><span>${ov.total_hours}</span> h</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Department</span>
+        <span class="meta-value">${ov.department}</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Language</span>
+        <span class="meta-value">${ov.language}</span>
+      </div>
+    </div>
+
+    <!-- ── BODY ── -->
+    <div class="syllabus-body">
+
+      <!-- Colonne principale -->
+      <div class="syllabus-main">
+
+        <!-- Syllabus topics -->
+        <div class="syl-section">
+          <h2><span class="icon"></span> Syllabus Topics</h2>
+          <ul class="topics-list">
+            ${d.syllabus_topics.map(t => `<li>${t}</li>`).join('')}
+          </ul>
+        </div>
+
+        <!-- Learning outcomes -->
+        <div class="syl-section">
+          <h2><span class="icon"></span> Learning Outcomes</h2>
+          <ul class="outcomes-list">
+            ${d.learning_outcomes.map(o => `<li>${o}</li>`).join('')}
+          </ul>
+        </div>
+
+        <!-- Evaluation -->
+        <div class="syl-section">
+          <h2><span class="icon"></span> Evaluation</h2>
+          <table class="eval-table">
+            <thead>
+              <tr>
+                <th>Assessment</th>
+                <th>Weight</th>
+                <th style="width:200px">Distribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${evalEntries.map(e => `
+                <tr>
+                  <td>${e.label}</td>
+                  <td class="eval-weight">${e.pct}%</td>
+                  <td>
+                    <div class="eval-bar-wrap">
+                      <div class="eval-bar" style="width:${e.pct}%"></div>
+                    </div>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- Sidebar droite -->
+      <aside class="syllabus-sidebar">
+        <!-- Responsables -->
+        <div class="sidebar-card">
+          <h3>Responsible</h3>
+          <div class="responsible-item">
+            <div class="responsible-avatar">${initials(ov.responsibles.module)}</div>
+            <div>
+              <div class="responsible-name">${ov.responsibles.module}</div>
+              <div class="responsible-role">Module Responsible</div>
+            </div>
+          </div>
+          <div class="responsible-item">
+            <div class="responsible-avatar">${initials(ov.responsibles.ue)}</div>
+            <div>
+              <div class="responsible-name">${ov.responsibles.ue}</div>
+              <div class="responsible-role">UE Responsible</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prérequis -->
+        <div class="sidebar-card">
+          <h3>Prerequisites</h3>
+          <div class="prereq-tags">
+            ${d.prerequisites.map(p => `<span class="prereq-tag">${p}</span>`).join('')}
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  `;
+}
+
 // Animated Nav bar script
 document.addEventListener('DOMContentLoaded', () => {
     const underline = document.querySelector('.nav-underline');
@@ -472,5 +609,34 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Erreur lors du chargement des formations:', error));
     }
 });
+
+// Script for dynamic Syllabus page
+document.addEventListener('DOMContentLoaded', () => {
+    const root   = document.getElementById('syllabus-root');
+    const params = new URLSearchParams(window.location.search);
+    const courseId = parseInt(params.get('id'));
+
+    if (!courseId) {
+        root.innerHTML = notFound('No course selected. <a href="formations.html">← Back to formations</a>');
+        return;
+    }
+
+    fetch('../json/formations_data.json')
+        .then(r => r.json())
+        .then(data => {
+            const course = data.find(c => c.id === courseId);
+            if (!course) {
+                root.innerHTML = notFound(`Course #${courseId} not found. <a href="formations.html">← Back</a>`);
+                return;
+            }
+            document.title = `${course.course_code} — ${course.course_name}`;
+            root.innerHTML = buildSyllabus(course);
+        })
+        .catch(() => {
+            root.innerHTML = notFound('Could not load course data.');
+        });
+});
+
+
 
 

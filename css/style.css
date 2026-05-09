@@ -185,9 +185,7 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   border-radius: 10px;
   margin-top: 16px;
 }
-.img-orange { background: linear-gradient(135deg, #f5a623, #f7c56a); }
-.img-cyan { background: linear-gradient(135deg, #00b8c8, #4fd1dc); }
-.img-teal { background: linear-gradient(135deg, #2a9d8f, #52b69a); }
+
 
 /* ── FORMATIONS PAGE ── */
 .formations-content { padding: 50px 60px; }
@@ -295,13 +293,11 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   display: none; /* Chrome/Safari */
 }
 
-/* On s'assure que les cartes gardent la bonne largeur (environ 3 par ligne sur desktop) */
 .carousel-track .testimonial-card {
   min-width: calc(33.333% - 11px);
   flex-shrink: 0;
 }
 
-/* Boutons précédent / suivant */
 .carousel-btn.prev {
   position: absolute;
   left: -20px;
@@ -312,7 +308,6 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   right: -20px;
 }
 
-/* Adaptation pour mobile */
 @media (max-width: 1000px) {
   .carousel-track .testimonial-card {
     min-width: 100%; /* 1 carte par ligne sur mobile */
@@ -579,7 +574,7 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
 }
 .research-card .info a::after { content: ' →'; }
 
-/* ── SUBJECT / ARTICLE PAGE ── */
+/* ── ARTICLE PAGE ── */
 .subject-content { padding: 50px 60px; }
 .subject-eyebrow { font-size: 14px; color: var(--text-gray); margin-bottom: 10px; }
 .subject-content h1 {
@@ -636,6 +631,289 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
 .pullquote-author .avatar-circle { width: 44px; height: 44px; }
 .pullquote-author .name { font-size: 15px; font-weight: 600; }
 .pullquote-author .role { font-size: 13px; color: var(--text-gray); }
+
+
+/* ── SYLLABUS PAGE ── */
+
+/* ── Hero (same pattern as .home-hero) ── */
+.syllabus-hero {
+  background: var(--dark-navy);
+  padding: 60px 60px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.back-link {
+  font-size: 13px;
+  color: var(--text-light);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent-cyan); }
+
+.course-code-badge {
+  display: inline-block;
+  background: var(--mid-navy);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+.syllabus-hero h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 700px;
+}
+.syllabus-hero .hero-summary {
+  font-size: 15px;
+  color: var(--text-light);
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* ── Meta bar (same bg as footer = --mid-navy) ── */
+.syllabus-meta-bar {
+  background: var(--mid-navy);
+  padding: 16px 60px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.meta-item { display: flex; flex-direction: column; gap: 2px; }
+.meta-label {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+.meta-value .hl { color: var(--accent-cyan); }
+
+/* ── Main layout ── */
+.syllabus-body {
+  padding: 50px 60px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+.syllabus-main { display: flex; flex-direction: column; gap: 48px; }
+
+/* ── Section titles — same weight as .formation-section h2,
+   underline bar mirrors .nav-item active indicator ── */
+.syl-section-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid var(--mid-navy);
+  position: relative;
+}
+.syl-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 48px;
+  height: 4px;
+  background: var(--accent-cyan);
+}
+
+/* ── Topics — styled as .feature-card / .testimonial-card ── */
+.topics-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.topics-list li {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  border-left: 4px solid var(--mid-navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+
+/* ── Outcomes — 2-col grid, card style like .feature-card ── */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.outcome-item {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+}
+.outcome-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--mid-navy);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Eval table — header mirrors .mid-navy like the footer ── */
+.eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.eval-table thead tr { background: var(--mid-navy); color: var(--white); }
+.eval-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.eval-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dark);
+}
+.eval-table tbody tr:last-child td { border-bottom: none; }
+.eval-table tbody tr:nth-child(even) { background: var(--bg-light); }
+.eval-weight { font-weight: 700; color: var(--mid-navy); white-space: nowrap; }
+.eval-bar-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 80px;
+}
+.eval-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-hero), var(--accent-cyan));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* ── Sidebar cards — same as .feature-card ── */
+.syllabus-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+.sidebar-card {
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.sidebar-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-hero);
+  margin-bottom: 16px;
+}
+.sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.sidebar-row:last-child { border-bottom: none; }
+.sidebar-row .s-key { color: var(--text-gray); }
+.sidebar-row .s-val { font-weight: 600; color: var(--text-dark); }
+
+/* Prereq pills — same shape as .btn-outline ── */
+.prereq-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.prereq-tag {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--teal-hero);
+  border: 1.5px solid var(--teal-hero);
+  font-weight: 500;
+}
+
+/* Responsible items — same as .testimonial-author ── */
+.responsible-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.responsible-item:last-child { border-bottom: none; }
+.responsible-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--teal-hero);
+  background: var(--mid-navy);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.responsible-name { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+.responsible-role { font-size: 12px; color: var(--text-gray); }
+
+/* ── Loader ── */
+.syllabus-loader {
+  padding: 80px 60px;
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+/* ── Responsive — mirrors existing @media (max-width: 1000px) ── */
+@media (max-width: 1000px) {
+  .syllabus-hero,
+  .syllabus-meta-bar,
+  .syllabus-body { padding-left: 20px; padding-right: 20px; }
+  .syllabus-hero { padding-top: 40px; padding-bottom: 32px; }
+  .syllabus-hero h1 { font-size: 26px; }
+  .syllabus-body { grid-template-columns: 1fr; }
+  .syllabus-meta-bar { gap: 20px; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+}
 
 /* ── CONTACT PAGE ── */
 .contact-content { padding: 50px 60px; }

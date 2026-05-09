@@ -4,199 +4,776 @@
     "course_code": "T1402",
     "course_name": "Web Programming 1: HTML, CSS, JS",
     "course_image": "../img/FormationImages/WebPro.jpg",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Introduction to front-end development, covering the structural, stylistic, and behavioral pillars of the modern web.",
+        "department": "Computer Science",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "Sarah CONNOR", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "HTML5 Semantic Tags and Structure",
+        "CSS3 Styling, Flexbox, and Grid Layouts",
+        "Responsive Design and Media Queries",
+        "JavaScript Syntax and DOM Manipulation",
+        "Event Handling and Basic Form Validation"
+      ],
+      "prerequisites": ["Basic computer literacy", "Logic basics"],
+      "learning_outcomes": [
+        "Build a multi-page static website",
+        "Apply advanced styling using modern CSS techniques",
+        "Add interactivity to web pages with Vanilla JS"
+      ],
+      "evaluation": { "Final_Project": "60%", "Lab_Quizzes": "40%" }
+    }
   },
   {
     "id": 2,
     "course_code": "T1403",
     "course_name": "Programming in Python",
     "course_image": "../img/FormationImages/Python.png",
-    "course_data": [],
-    "years": "P1"
+    "years": "P1",
+    "course_data": {
+      "overview": {
+        "summary": "A foundational course on programming logic and data manipulation using the Python language.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 50,
+        "responsibles": { "module": "Guido ROSSUM", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Variables, Data Types, and Operators",
+        "Control Flow: Loops and Conditionals",
+        "Functions and Modular Code",
+        "Data Structures: Lists, Dictionaries, and Tuples",
+        "File I/O and Exception Handling"
+      ],
+      "prerequisites": ["None"],
+      "learning_outcomes": [
+        "Write efficient Python scripts for task automation",
+        "Implement basic algorithms in Python",
+        "Debug and test software modules"
+      ],
+      "evaluation": { "Coding_Challenge": "50%", "Practical_Exam": "50%" }
+    }
   },
   {
     "id": 4,
     "course_code": "T1405",
     "course_name": "Algorithmics and Data Structures I",
     "course_image": "../img/FormationImages/C.png",
-    "course_data": [],
-    "years": "P1"
+    "years": "P1",
+    "course_data": {
+      "overview": {
+        "summary": "Focuses on procedural programming in C and the fundamental ways to organize data in memory.",
+        "department": "Computer Science",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 60,
+        "responsibles": { "module": "Dennis RITCHIE", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Memory Management and Pointers",
+        "Static Arrays and Strings",
+        "Structures (struct) and Unions",
+        "Basic Sorting and Searching Algorithms",
+        "Recursion Fundamentals"
+      ],
+      "prerequisites": ["Intro to Programming"],
+      "learning_outcomes": [
+        "Master pointer arithmetic and manual memory management",
+        "Implement basic sorting logic from scratch",
+        "Write modular code in C"
+      ],
+      "evaluation": { "Midterm_C_Exam": "40%", "Lab_Assignments": "60%" }
+    }
   },
   {
     "id": 5,
     "course_code": "T1406",
     "course_name": "Algorithmics",
     "course_image": "../img/FormationImages/Algorithmic.png",
-    "course_data": [],
-    "years": "P1"
+    "years": "P1",
+    "course_data": {
+      "overview": {
+        "summary": "Mathematical approach to algorithm design and logic before implementation.",
+        "department": "Computer Science",
+        "language": "English",
+        "credits": 3,
+        "total_hours": 40,
+        "responsibles": { "module": "Alan TURING", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Pseudocode Standards",
+        "Logical Propositions and Truth Tables",
+        "Algorithm Correctness and Invariants",
+        "Greedy Algorithms",
+        "Divide and Conquer Strategy"
+      ],
+      "prerequisites": ["Discrete Mathematics"],
+      "learning_outcomes": [
+        "Translate complex logic into formal pseudocode",
+        "Prove algorithm correctness",
+        "Solve problems using recursive strategies"
+      ],
+      "evaluation": { "Theoretical_Exam": "100%" }
+    }
   },
   {
     "id": 6,
     "course_code": "T1407",
     "course_name": "Complexity",
     "course_image": "../img/FormationImages/Complexity.png",
-    "course_data": [],
-    "years": "P1"
+    "years": "P1",
+    "course_data": {
+      "overview": {
+        "summary": "Study of computational efficiency, analyzing the limits of time and space in software.",
+        "department": "Computer Science",
+        "language": "English",
+        "credits": 3,
+        "total_hours": 30,
+        "responsibles": { "module": "Donald KNUTH", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Big O, Big Theta, and Big Omega Notations",
+        "Time Complexity vs Space Complexity",
+        "Worst-case and Average-case Analysis",
+        "Master Theorem for Recursion",
+        "Introduction to P vs NP"
+      ],
+      "prerequisites": ["Algorithmics", "Calculus"],
+      "learning_outcomes": [
+        "Predict software performance under heavy load",
+        "Compare different algorithms mathematically",
+        "Optimize code based on resource constraints"
+      ],
+      "evaluation": { "Written_Exam": "70%", "Problem_Sets": "30%" }
+    }
   },
   {
     "id": 7,
     "course_code": "T1408",
     "course_name": "Data Structures and Algorithmics II",
     "course_image": "../img/FormationImages/AdvancedC.png",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Advanced dynamic data structures and efficient information management in low-level programming.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 68,
+        "responsibles": { "module": "Nicolas FLASQUE", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Singly and Doubly Linked Lists",
+        "Stacks and Queues (LIFO/FIFO)",
+        "Binary Search Trees (BST)",
+        "AVL Trees and Balancing",
+        "Hash Tables and Collision Handling"
+      ],
+      "prerequisites": ["Algorithmics I", "C Programming"],
+      "learning_outcomes": [
+        "Implement complex dynamic structures in C",
+        "Choose the optimal structure for specific use-cases",
+        "Optimize data retrieval times"
+      ],
+      "evaluation": { "Written_DE": "50%", "Practical_TP": "30%", "Mini_Project": "20%" }
+    }
   },
   {
     "id": 8,
     "course_code": "T1409",
     "course_name": "Introduction to Linux",
     "course_image": "../img/FormationImages/Linux.png",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Command-line mastery and Unix system administration basics for developers.",
+        "department": "Systems & Networks",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 40,
+        "responsibles": { "module": "Linus TORVALDS", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "The Linux File System Hierarchy",
+        "Bash Commands and Piping",
+        "Permissions and User Management",
+        "Shell Scripting and Automation",
+        "Process Management and Networking Basics"
+      ],
+      "prerequisites": ["Basic Computer Logic"],
+      "learning_outcomes": [
+        "Operate effectively in a CLI environment",
+        "Automate repetitive tasks with Shell scripts",
+        "Manage file security and permissions"
+      ],
+      "evaluation": { "CLI_Practical_Test": "60%", "Scripting_Project": "40%" }
+    }
   },
   {
     "id": 9,
     "course_code": "T1410",
     "course_name": "Network Architecture",
     "course_image": "../img/FormationImages/CompArch.png",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Foundations of computer networking, focusing on physical layers and communication standards.",
+        "department": "Systems & Networks",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "Vint CERF", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "OSI 7-Layer Model",
+        "TCP/IP Suite Fundamentals",
+        "IP Addressing and Subnetting",
+        "Ethernet Standards and Switching",
+        "Introduction to Routing Protocols"
+      ],
+      "prerequisites": ["Introduction to Systems"],
+      "learning_outcomes": [
+        "Analyze network packets using tools",
+        "Design and calculate subnets",
+        "Configure basic networking hardware"
+      ],
+      "evaluation": { "Final_Exam": "50%", "Network_Lab": "50%" }
+    }
   },
   {
     "id": 10,
     "course_code": "M1402",
     "course_name": "Introduction to Databases",
     "course_image": "../img/FormationImages/Database.png",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Managing structured data using relational models and SQL.",
+        "department": "Data Science",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "Edgar CODD", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Entity-Relationship (ER) Modeling",
+        "Relational Algebra",
+        "SQL: DDL (Structure) and DML (Data)",
+        "Normalization and Data Integrity",
+        "Joins and Subqueries"
+      ],
+      "prerequisites": ["Logic", "Discrete Math"],
+      "learning_outcomes": [
+        "Design robust relational schemas",
+        "Write complex SQL queries for data extraction",
+        "Ensure data consistency through constraints"
+      ],
+      "evaluation": { "Database_Design_Project": "50%", "SQL_Exam": "50%" }
+    }
   },
   {
     "id": 19,
     "course_code": "M1403",
     "course_name": "OOP with Java",
     "course_image": "../img/FormationImages/Java.png",
-    "course_data": [],
-    "years": "P2"
+    "years": "P2",
+    "course_data": {
+      "overview": {
+        "summary": "Learning the object-oriented paradigm to build modular and reusable software using Java.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 60,
+        "responsibles": { "module": "James GOSLING", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Classes, Objects, and Methods",
+        "Encapsulation and Information Hiding",
+        "Inheritance and Polymorphism",
+        "Interfaces and Abstract Classes",
+        "Java Collection Framework Basics"
+      ],
+      "prerequisites": ["Algorithmic Logic", "C or Python experience"],
+      "learning_outcomes": [
+        "Design class hierarchies for real-world problems",
+        "Apply OOP principles to software development",
+        "Utilize Java standard libraries"
+      ],
+      "evaluation": { "Coding_Project": "60%", "Theory_Test": "40%" }
+    }
   },
   {
     "id": 11,
     "course_code": "TI505M",
     "course_name": "Java 2: Generic, functional and concurrent programming",
     "course_image": "../img/FormationImages/Java2.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Advanced Java features for professional application development and high performance.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 60,
+        "responsibles": { "module": "Lena TREBAUL", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Generics and Wildcards",
+        "Lambda Expressions and Functional Interfaces",
+        "Streams API for Data Processing",
+        "Multithreading and Synchronization",
+        "Concurrency Utilities (Executors, Futures)"
+      ],
+      "prerequisites": ["Java 1 / OOP basics"],
+      "learning_outcomes": [
+        "Write high-performance concurrent applications",
+        "Leverage functional programming in Java",
+        "Design generic and flexible codebases"
+      ],
+      "evaluation": { "Multi-threaded_Project": "70%", "Java_Quiz": "30%" }
+    }
   },
   {
     "id": 12,
     "course_code": "TI508M",
     "course_name": "Introduction to Machine Learning",
     "course_image": "../img/FormationImages/IntroToML.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Fundamental concepts of teaching machines to learn from data using statistical models.",
+        "department": "Artificial Intelligence",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 55,
+        "responsibles": { "module": "Yann LECUN", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Supervised Learning: Regression and Classification",
+        "Unsupervised Learning: K-Means Clustering",
+        "Data Preprocessing and Feature Scaling",
+        "Model Evaluation: Overfitting vs Underfitting",
+        "Introduction to Scikit-Learn"
+      ],
+      "prerequisites": ["Python Programming", "Probability & Statistics"],
+      "learning_outcomes": [
+        "Build and evaluate predictive models",
+        "Clean and prepare data for ML pipelines",
+        "Interpret model results and accuracy"
+      ],
+      "evaluation": { "Kaggle_Project": "60%", "Written_Exam": "40%" }
+    }
   },
   {
     "id": 13,
     "course_code": "TI510M",
     "course_name": "Web Programming 2: JS Frameworks",
     "course_image": "../img/FormationImages/JS2.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Building modern dynamic web applications using React or Vue.js component architecture.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 50,
+        "responsibles": { "module": "Jordan WALKE", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Component-Based Architecture",
+        "State Management (Hooks/Redux)",
+        "Client-Side Routing",
+        "Asynchronous Data Fetching from APIs",
+        "Build Tools and Deployment (Vite/Vercel)"
+      ],
+      "prerequisites": ["Web Programming 1", "Advanced JavaScript"],
+      "learning_outcomes": [
+        "Develop scalable Single Page Applications (SPA)",
+        "Manage complex application states",
+        "Integrate front-end apps with RESTful APIs"
+      ],
+      "evaluation": { "SPA_Project": "100%" }
+    }
   },
   {
     "id": 14,
     "course_code": "TI515M",
     "course_name": "Object-Oriented Analysis & Design with UML",
     "course_image": "../img/FormationImages/OOA.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Mastering software modeling techniques and design patterns to solve complex architectural problems.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 40,
+        "responsibles": { "module": "Grady BOOCH", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Use Case and Requirement Analysis",
+        "UML Class, Sequence, and Activity Diagrams",
+        "Creational, Structural, and Behavioral Design Patterns",
+        "Solid Principles of Design",
+        "Refactoring Techniques"
+      ],
+      "prerequisites": ["Java 1", "Basic OOP"],
+      "learning_outcomes": [
+        "Model software architectures before coding",
+        "Apply industry-standard Design Patterns",
+        "Critique and improve software designs"
+      ],
+      "evaluation": { "Design_Portfolio": "50%", "Theoretical_Exam": "50%" }
+    }
   },
   {
     "id": 15,
     "course_code": "TI502M",
     "course_name": "Networks 2: Communication Protocols and Applications",
     "course_image": "../img/FormationImages/ComProtocol.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Deep dive into application-layer protocols and modern network infrastructure management.",
+        "department": "Systems & Networks",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "John SMITH", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "HTTP/HTTPS and Web Services",
+        "DNS, DHCP, and SMTP protocols",
+        "Network Security (SSL/TLS)",
+        "Load Balancing and High Availability",
+        "Wireshark Traffic Analysis"
+      ],
+      "prerequisites": ["Network Architecture"],
+      "learning_outcomes": [
+        "Secure network communications",
+        "Troubleshoot complex protocol errors",
+        "Configure enterprise-level services"
+      ],
+      "evaluation": { "Lab_Practical": "60%", "Final_Exam": "40%" }
+    }
   },
   {
     "id": 16,
     "course_code": "TI504M",
     "course_name": "Computer Architecture and Operating Systems",
     "course_image": "../img/FormationImages/SystemArch.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Understanding the interface between software and hardware, including kernel management and CPU architecture.",
+        "department": "Computer Systems",
+        "language": "English",
+        "credits": 6,
+        "total_hours": 75,
+        "responsibles": { "module": "Von NEUMANN", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "CPU Pipelines and Instruction Sets",
+        "Process Management and Scheduling",
+        "Memory Paging and Virtual Memory",
+        "File System Implementation",
+        "Interrupts and Device Drivers"
+      ],
+      "prerequisites": ["Computer Architecture", "Linux Basics"],
+      "learning_outcomes": [
+        "Analyze OS performance",
+        "Write low-level system code",
+        "Understand kernel-level resource allocation"
+      ],
+      "evaluation": { "Systems_Coding_Project": "50%", "Final_Exam": "50%" }
+    }
   },
   {
     "id": 17,
     "course_code": "TI530M",
     "course_name": "Introduction to Cybersecurity",
     "course_image": "../img/FormationImages/IntroCyber.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "A comprehensive overview of digital threats, vulnerabilities, and the basics of defensive security.",
+        "department": "Security",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 40,
+        "responsibles": { "module": "Kevin MITNICK", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "Common Attack Vectors (Phishing, SQLi, XSS)",
+        "Cryptography Foundations",
+        "Network Security and Firewalls",
+        "Risk Assessment and Management",
+        "Cyber Ethics and Laws"
+      ],
+      "prerequisites": ["Networks 1", "Programming 1"],
+      "learning_outcomes": [
+        "Identify and mitigate common web vulnerabilities",
+        "Secure simple network environments",
+        "Understand the legal landscape of cybersecurity"
+      ],
+      "evaluation": { "Security_Audit_Report": "50%", "CTF_Challenge": "50%" }
+    }
   },
   {
     "id": 18,
     "course_code": "TI603",
-    "course_name": "Bases de Données 2 : Sécurité et Automatisation",
+    "course_name": "Database 2: Security and Automation",
     "course_image": "../img/FormationImages/DbSec.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Advanced database management focusing on programmable objects and securing data at rest.",
+        "department": "Data Science",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "Nicolas FLASQUE", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "PL/SQL: Triggers and Stored Procedures",
+        "Database User Roles and Access Control",
+        "Backup and Disaster Recovery Strategies",
+        "Performance Tuning and Indexing",
+        "DB Hardening and Encryption"
+      ],
+      "prerequisites": ["Intro to Databases"],
+      "learning_outcomes": [
+        "Automate complex database tasks",
+        "Secure sensitive data against unauthorized access",
+        "Optimize query performance for large datasets"
+      ],
+      "evaluation": { "DB_Automation_Project": "70%", "Technical_Exam": "30%" }
+    }
   },
   {
     "id": 20,
     "course_code": "TI609",
-    "course_name": "Les Fondamentaux du Cloud Computing",
+    "course_name": "Cloud Computing Fundamentals",
     "course_image": "../img/FormationImages/CloudComputing.png",
-    "course_data": [],
-    "years": "ING1"
+    "years": "ING1",
+    "course_data": {
+      "overview": {
+        "summary": "Learning the basics of virtualized infrastructure and cloud-native services.",
+        "department": "Systems & Networks",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 40,
+        "responsibles": { "module": "Jeff BEZOS", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "IaaS, PaaS, and SaaS Models",
+        "Introduction to AWS/Azure/GCP",
+        "Virtual Machines vs Containers",
+        "Cloud Storage (S3/Blobs)",
+        "Serverless Functions Intro"
+      ],
+      "prerequisites": ["Linux Basics", "Network Architecture"],
+      "learning_outcomes": [
+        "Deploy a web app to a cloud provider",
+        "Manage cloud resources via CLI",
+        "Estimate cloud cost and scaling"
+      ],
+      "evaluation": { "Cloud_Deployment_Project": "100%" }
+    }
   },
   {
     "id": 21,
     "course_code": "T1601",
     "course_name": "Artificial Intelligence & Machine Learning",
     "course_image": "../img/FormationImages/AIAndML.png",
-    "course_data": [],
-    "years": "ING2"
+    "years": "ING2",
+    "course_data": {
+      "overview": {
+        "summary": "Advanced AI techniques including deep learning and neural network architectures.",
+        "department": "Artificial Intelligence",
+        "language": "English",
+        "credits": 6,
+        "total_hours": 75,
+        "responsibles": { "module": "Yann LECUN", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Neural Networks and Backpropagation",
+        "Convolutional Neural Networks (CNN) for Vision",
+        "Recurrent Neural Networks (RNN) for Sequences",
+        "Natural Language Processing (NLP)",
+        "Reinforcement Learning"
+      ],
+      "prerequisites": ["Intro to ML", "Linear Algebra"],
+      "learning_outcomes": [
+        "Design and train deep neural networks",
+        "Implement AI agents for games or vision",
+        "Fine-tune pre-trained models"
+      ],
+      "evaluation": { "AI_Project": "60%", "Final_Exam": "40%" }
+    }
   },
   {
     "id": 22,
     "course_code": "T1602",
     "course_name": "Cybersecurity: Systems Security",
     "course_image": "../img/FormationImages/SystemSec.png",
-    "course_data": [],
-    "years": "ING2"
+    "years": "ING2",
+    "course_data": {
+      "overview": {
+        "summary": "Focuses on hardening enterprise systems and performing penetration testing.",
+        "department": "Security",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 60,
+        "responsibles": { "module": "John SMITH", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Advanced Penetration Testing",
+        "Identity and Access Management (IAM)",
+        "Endpoint Protection (EDR)",
+        "Forensic Analysis Basics",
+        "Security Operations Centers (SOC)"
+      ],
+      "prerequisites": ["Intro to Cybersecurity", "Linux Advanced"],
+      "learning_outcomes": [
+        "Execute a full security audit",
+        "Hardening OS kernels",
+        "Detect and respond to intrusions"
+      ],
+      "evaluation": { "Pentest_Report": "70%", "Quizzes": "30%" }
+    }
   },
   {
     "id": 23,
     "course_code": "T1603",
     "course_name": "Mobile Application Development",
     "course_image": "../img/FormationImages/MobileApp.png",
-    "course_data": [],
-    "years": "ING2"
+    "years": "ING2",
+    "course_data": {
+      "overview": {
+        "summary": "Building native and cross-platform mobile apps for Android and iOS devices.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 4,
+        "total_hours": 45,
+        "responsibles": { "module": "Steve JOBS", "ue": "Lena TREBAUL" }
+      },
+      "syllabus_topics": [
+        "Mobile UI/UX Design Principles",
+        "Native Android (Kotlin) basics",
+        "Cross-platform frameworks (Flutter/React Native)",
+        "Mobile Storage and Offline data",
+        "API Integration and JSON parsing",
+        "App Store Deployment process"
+      ],
+      "prerequisites": ["Java or JavaScript", "Web basics"],
+      "learning_outcomes": [
+        "Develop functional mobile apps",
+        "Optimize apps for performance and battery",
+        "Handle mobile sensors and GPS",
+        "Publish applications to play stores"
+      ],
+      "evaluation": { "App_Store_Project": "70%", "UX_Design_Portfolio": "30%" }
+    }
   },
   {
     "id": 24,
     "course_code": "T1701",
     "course_name": "Cloud Computing and Micro-services",
     "course_image": "../img/FormationImages/CloudAndMicro.png",
-    "course_data": [],
-    "years": "ING3"
+    "years": "ING3",
+    "course_data": {
+      "overview": {
+        "summary": "Designing resilient, scalable distributed systems using modern containerization.",
+        "department": "Software Engineering",
+        "language": "English",
+        "credits": 6,
+        "total_hours": 70,
+        "responsibles": { "module": "Solomon HYKES", "ue": "John SMITH" }
+      },
+      "syllabus_topics": [
+        "Docker and Containerization",
+        "Kubernetes Orchestration",
+        "Microservices Architecture Design",
+        "Service Meshes and API Gateways",
+        "CI/CD Pipelines for the Cloud"
+      ],
+      "prerequisites": ["Cloud Fundamentals", "Advanced Web Programming"],
+      "learning_outcomes": [
+        "Manage container clusters",
+        "Architect distributed systems",
+        "Automate software delivery"
+      ],
+      "evaluation": { "Infrastructure_Project": "100%" }
+    }
   },
   {
     "id": 25,
     "course_code": "T1702",
     "course_name": "IT Project Management",
     "course_image": "../img/FormationImages/ITManagement.png",
-    "course_data": [],
-    "years": "ING3"
+    "years": "ING3",
+    "course_data": {
+      "overview": {
+        "summary": "Leading tech teams using Agile methodologies and industry-standard management tools.",
+        "department": "Management",
+        "language": "English",
+        "credits": 3,
+        "total_hours": 30,
+        "responsibles": { "module": "Ken SCHWABER", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Scrum and Kanban Frameworks",
+        "Project Lifecycle (SDLC)",
+        "Stakeholder and Risk Management",
+        "Budgeting and Resource Allocation",
+        "Jira and Productivity Tools"
+      ],
+      "prerequisites": ["Professional Internship"],
+      "learning_outcomes": [
+        "Lead a Scrum team",
+        "Define and track project KPIs",
+        "Manage software quality and deadlines"
+      ],
+      "evaluation": { "Scrum_Simulation": "40%", "Project_Plan_Report": "60%" }
+    }
   },
   {
     "id": 26,
     "course_code": "T1703",
     "course_name": "Big Data: Architecture and Scalability",
     "course_image": "../img/FormationImages/BigDataArch.png",
-    "course_data": [],
-    "years": "ING3"
+    "years": "ING3",
+    "course_data": {
+      "overview": {
+        "summary": "Architecting systems for massive data volume, variety, and velocity.",
+        "department": "Data Science",
+        "language": "English",
+        "credits": 5,
+        "total_hours": 55,
+        "responsibles": { "module": "Doug CUTTING", "ue": "Nicolas FLASQUE" }
+      },
+      "syllabus_topics": [
+        "Hadoop and HDFS Ecosystem",
+        "Apache Spark for Data Processing",
+        "NoSQL: MongoDB and Cassandra",
+        "Kafka and Real-time Streaming",
+        "Data Lake Architectures"
+      ],
+      "prerequisites": ["Database 2", "Cloud Computing"],
+      "learning_outcomes": [
+        "Process terabytes of data efficiently",
+        "Implement real-time data pipelines",
+        "Manage NoSQL database clusters"
+      ],
+      "evaluation": { "Big_Data_Lab": "50%", "Research_Paper": "50%" }
+    }
   }
 ]
