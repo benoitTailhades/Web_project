@@ -417,9 +417,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p><strong>Formation :</strong> ${prof.formation}</p>
                                 <a class="btn-black" href="teacher_profile.html?id=${prof.id}">See profile</a>
                             </div>
-                            <div class="teacher-img"><div class="dots-pattern"></div></div>
-                            <!-- <img src="${prof.photo}" alt="Photo de ${prof.nom}"> -->
+                            <div class="teacher-img">
+                                <img src="${prof.photo}" alt="Photo de ${prof.nom}">
                             </div>
+                        </div>
                     `;
 
                     // On ajoute ce code HTML à l'intérieur de notre conteneur
@@ -451,29 +452,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                                 <p>${teacher.office_hours}</p>
                             </div>
                             <div class="butterfly-img">
-                                <svg class="butterfly-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <g fill="none">
-                                        <!-- butterfly wings in dotted style -->
-                                        <ellipse cx="70" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
-                                        <ellipse cx="130" cy="80" rx="55" ry="65" fill="#c8c0e8" opacity="0.7"/>
-                                        <ellipse cx="75" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
-                                        <ellipse cx="125" cy="130" rx="40" ry="45" fill="#d8d0f0" opacity="0.6"/>
-                                        <!-- body -->
-                                        <ellipse cx="100" cy="100" rx="6" ry="50" fill="#8878c8"/>
-                                        <!-- dots texture -->
-                                        <circle cx="60" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
-                                        <circle cx="80" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
-                                        <circle cx="55" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
-                                        <circle cx="140" cy="70" r="3" fill="#a898d8" opacity="0.5"/>
-                                        <circle cx="120" cy="60" r="2" fill="#a898d8" opacity="0.5"/>
-                                        <circle cx="145" cy="90" r="2" fill="#a898d8" opacity="0.5"/>
-                                        <!-- antennae -->
-                                        <line x1="97" y1="52" x2="80" y2="30" stroke="#8878c8" stroke-width="1.5"/>
-                                        <line x1="103" y1="52" x2="120" y2="30" stroke="#8878c8" stroke-width="1.5"/>
-                                        <circle cx="80" cy="30" r="3" fill="#8878c8"/>
-                                        <circle cx="120" cy="30" r="3" fill="#8878c8"/>
-                                    </g>
-                                </svg>
+                                <img src="${teacher.photo}" alt="Photo de ${teacher.nom}">
                             </div>
                         </div>
                         <div class="profile-cols">
@@ -620,7 +599,3 @@ document.addEventListener('DOMContentLoaded', () => {
             root.innerHTML = notFound('Could not load course data.');
         });
 });
-
-
-
-

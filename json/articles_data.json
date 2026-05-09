@@ -4,7 +4,7 @@
     "title": "Optimization of Regression Models in Distributed Computing",
     "image": "../img/ResearchImage/LinearRegression.png",
     "description": "An exploration of Data Parallelism for linear regression. This article details the use of stochastic gradient descent to minimize the mean squared error cost function across multiple processing units, dynamically adjusting learning rates based on local gradient variance.",
-    "authors": "Lucas Dubois, Research Department, Big Data Laboratory",
+    "authors": "Chris P. Bacon, Pete Sza, Research Department, Big Data Laboratory",
     "article_page": "../html/articles/Article1.html"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Spectral Graph Analysis for Data Partitioning",
     "image": "../img/ResearchImage/SpectralMath.png",
     "description": "A study of complex network clustering through linear algebra. This paper examines the Laplacian matrix of undirected graphs and demonstrates how extracting the Fiedler vector via the Lanczos algorithm relaxes a combinatorial problem into a continuous polynomial-time solution.",
-    "authors": "Marc Richard, Applied Mathematics Department",
+    "authors": "Artie Choke, Applied Mathematics Department",
     "article_page": "../html/articles/Article2.html"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Principal Component Analysis and Diagonalization",
     "image": "../img/ResearchImage/Diago.png",
     "description": "An analysis of dimensionality reduction using the spectral theorem. This research explains how diagonalizing the empirical covariance matrix allows for data compression by projecting observations onto the eigenvectors associated with the largest eigenvalues.",
-    "authors": "Sophie Martin, Signal Processing Laboratory",
+    "authors": "Barb Dwyer, Signal Processing Laboratory",
     "article_page": "../html/articles/Article3.html"
   },
   {
@@ -28,7 +28,7 @@
     "title": "Splitting Criteria via Shannon Entropy",
     "image": "../img/ResearchImage/Entropy.png",
     "description": "An overview of decision tree construction based on probability and information theory. This article formalizes the maximization of information gain using Shannon entropy to partition data spaces, and discusses the necessity of pruning to control model complexity.",
-    "authors": "Antoine Lemaire, Algorithmic Research Group",
+    "authors": "Alexis Chen, Barb Dwyer, Algorithmic Research Group",
     "article_page": "../html/articles/Article4.html"
   }
 ]

@@ -3,47 +3,47 @@
     "id": 1,
     "nom": "Chris P. Bacon",
     "formation": "Web Programming",
-    "photo": "../img/teachers/john_doe.jpg",
+    "photo": "../img/TeachersImage/TeachM1.png",
     "biographie": "Chris is a senior fullstack developer with over a decade of experience in the tech industry. Throughout his career, he has led engineering teams at several high-growth startups, specializing in building scalable web architectures. He is a passionate advocate for modern front-end technologies, particularly the React and Vue ecosystems. In the classroom, Chris focuses on the 'learning by doing' approach, guiding students through the development of real-world applications and emphasizing the importance of clean, maintainable code and performance optimization.",
     "office_hours": "Monday 08:00 - 09:30",
     "email": "john.doe@efrei.net",
-    "article_id": []
+    "article_id": [1]
   },
   {
     "id": 2,
     "nom": "Artie Choke",
     "formation": "Algorithmics",
-    "photo": "../img/teachers/alice_martin.jpg",
+    "photo": "../img/TeachersImage/TeachF.png",
     "biographie": "As a prominent researcher in the field of distributed systems and algorithmic theory, Artie brings a wealth of academic and practical knowledge to the department. Her research focuses on improving the efficiency of consensus algorithms in decentralized networks. At the undergraduate level, she is dedicated to demystifying the fundamentals of programming. She teaches students not just how to code, but how to think algorithmically, focusing on code optimization and the mathematical rigor required to solve complex computational problems.",
     "office_hours": "Tuesday 10:30 - 12:30",
     "email": "alice.martin@efrei.net",
-    "article_id": []
+    "article_id": [2]
   },
   {
     "id": 3,
     "nom": "Pete Sza",
     "formation": "Databases",
-    "photo": "../img/teachers/robert_klein.jpg",
+    "photo": "../img/TeachersImage/TeachM2.png",
     "biographie": "Pete is a seasoned data architect who has spent his career managing massive datasets for Fortune 500 tech companies. With a deep expertise in both relational SQL databases and modern NoSQL solutions like MongoDB and Cassandra, he understands the critical role of data integrity in the digital age. His courses bridge the gap between theoretical data modeling and industrial application, teaching students how to design resilient database schemas and write high-performance queries that can handle millions of requests per second.",
     "office_hours": "Wednesday 14:00 - 15:00",
     "email": "robert.klein@efrei.net",
-    "article_id": []
+    "article_id": [1]
   },
   {
     "id": 4,
     "nom": "Barb Dwyer",
     "formation": "Python & Data Science",
-    "photo": "../img/teachers/sophie_bernard.jpg",
+    "photo": "../img/TeachersImage/TeachM3.png",
     "biographie": "Barb is an expert in data science and computational statistics, with a particular focus on using Python for social impact. She has a background in predictive analytics and has consulted for various NGOs to help them leverage their data for better decision-making. In her modules, Barb introduces students to the powerful libraries of the Python ecosystem, such as Pandas, NumPy, and Scikit-Learn. She is committed to teaching the ethical implications of data analysis and helping students turn raw information into actionable insights through visualization and machine learning.",
     "office_hours": "Thursday 09:30 - 11:00",
     "email": "sophie.bernard@efrei.net",
-    "article_id": []
+    "article_id": [3, 4]
   },
   {
     "id": 5,
     "nom": "Sue Flay",
     "formation": "Cybersecurity",
-    "photo": "../img/teachers/michael_anderson.jpg",
+    "photo": "../img/TeachersImage/TeachM4.png",
     "biographie": "Sue is a high-level cybersecurity consultant with a storied career in protecting critical infrastructure and conducting advanced penetration tests. Having collaborated with international security agencies, he brings an 'adversarial mindset' to the classroom, training students in ethical hacking and network defense. His lectures cover everything from cryptographic protocols to exploit development and security policy. Sue’s goal is to prepare the next generation of security professionals to defend against increasingly sophisticated global cyber threats.",
     "office_hours": "Friday 13:00 - 15:00",
     "email": "michael.anderson@efrei.net",
@@ -53,7 +53,7 @@
     "id": 6,
     "nom": "Pepe Roni",
     "formation": "Software Engineering",
-    "photo": "../img/teachers/emma_wilson.jpg",
+    "photo": "../img/TeachersImage/TeachM5.png",
     "biographie": "Pepe is a software engineer with extensive experience in enterprise-grade system architecture and the implementation of Agile methodologies. She has spent years refining the software development lifecycle (SDLC) for large-scale projects, focusing on CI/CD pipelines and Test-Driven Development (TDD). As a mentor, Pepe works closely with students on their capstone projects, teaching them the collaborative skills needed in a professional environment and how to build software that is both scalable and sustainable over time.",
     "office_hours": "Monday 11:00 - 12:30",
     "email": "emma.wilson@efrei.net",
@@ -63,17 +63,17 @@
     "id": 7,
     "nom": "Alexis Chen",
     "formation": "Artificial Intelligence",
-    "photo": "../img/teachers/david_chen.jpg",
+    "photo": "../img/TeachersImage/TeachM6.png",
     "biographie": "Alexis is a leading researcher in the field of Artificial Intelligence, specifically focusing on Deep Learning and Neural Network optimization. He has authored several groundbreaking papers presented at top-tier conferences like NeurIPS and ICML. In his courses, Alexis explores the mathematical foundations of AI while staying at the cutting edge of current trends, such as Large Language Models (LLMs) and computer vision. He encourages his students to push the boundaries of technology while maintaining a strong focus on the ethical and societal impacts of AI deployment.",
     "office_hours": "Tuesday 15:00 - 17:00",
     "email": "david.chen@efrei.net",
-    "article_id": []
+    "article_id": [4]
   },
   {
     "id": 8,
     "nom": "Robin Banks",
     "formation": "Mobile Development",
-    "photo": "../img/teachers/laura_garcia.jpg",
+    "photo": "../img/TeachersImage/TeachM7.png",
     "biographie": "Robin is a veteran mobile developer who has seen the evolution of the industry from the first smartphones to the present day. Specialist in both iOS (Swift) and Android (Kotlin) development, she has published dozens of apps on the Apple App Store and Google Play Store. Her teaching style is highly practical, guiding students through the entire lifecycle of an app—from UI/UX design and prototyping to API integration and final deployment. She is passionate about helping students create intuitive, user-friendly mobile experiences.",
     "office_hours": "Thursday 13:00 - 14:30",
     "email": "laura.garcia@efrei.net",
