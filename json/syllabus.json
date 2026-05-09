@@ -1,0 +1,760 @@
+[
+  {
+    "course_code": "T1402",
+    "description": "An introduction to the fundamental technologies of the web. Students will learn to build structured, styled, and interactive web pages using HTML5, CSS3, and vanilla JavaScript. Emphasis is placed on semantic markup, responsive design, and DOM manipulation.",
+    "objectives": [
+      "Understand the structure and semantics of HTML5",
+      "Design responsive layouts using CSS3 Flexbox and Grid",
+      "Manipulate the DOM using JavaScript",
+      "Handle user events and form validation",
+      "Deploy a static website"
+    ],
+    "prerequisites": [
+      "Basic computer literacy",
+      "Introduction to Algorithmics (recommended)"
+    ],
+    "chapters": [
+      { "title": "HTML5 Foundations", "description": "Document structure, semantic tags, forms, tables, multimedia elements." },
+      { "title": "CSS3 Styling & Layout", "description": "Selectors, box model, Flexbox, CSS Grid, media queries and responsive design." },
+      { "title": "JavaScript Basics", "description": "Variables, types, control flow, functions, arrays and objects." },
+      { "title": "DOM Manipulation", "description": "Selecting elements, modifying content, handling events, dynamic updates." },
+      { "title": "Forms & Validation", "description": "Client-side form validation, input types, regex patterns." },
+      { "title": "Mini-Project", "description": "Build and deploy a complete responsive multi-page website." }
+    ],
+    "credits": 4,
+    "hours": 40,
+    "assessments": [
+      { "type": "Lab Work", "weight": 40 },
+      { "type": "Mid-term Quiz", "weight": 20 },
+      { "type": "Final Project", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "T1403",
+    "description": "This course introduces programming through Python, one of the most widely used languages in industry and research. Students will develop strong problem-solving skills and get hands-on with Python's readable syntax, standard library, and key programming paradigms.",
+    "objectives": [
+      "Master Python syntax, data types, and control structures",
+      "Write reusable functions and work with modules",
+      "Manipulate files, strings, and collections",
+      "Apply object-oriented programming basics",
+      "Solve algorithmic problems with Python"
+    ],
+    "prerequisites": [
+      "None — beginner friendly"
+    ],
+    "chapters": [
+      { "title": "Getting Started with Python", "description": "Installation, REPL, variables, types, operators and basic I/O." },
+      { "title": "Control Flow", "description": "Conditionals, loops (for/while), break, continue, and comprehensions." },
+      { "title": "Functions & Scope", "description": "Defining functions, parameters, return values, recursion, lambda." },
+      { "title": "Data Structures", "description": "Lists, tuples, dictionaries, sets — operations and use cases." },
+      { "title": "File I/O & Exceptions", "description": "Reading and writing files, exception handling with try/except." },
+      { "title": "Intro to OOP", "description": "Classes, objects, attributes, methods, inheritance basics." },
+      { "title": "Standard Library & Modules", "description": "math, random, datetime, os — practical usage of built-in modules." }
+    ],
+    "credits": 4,
+    "hours": 42,
+    "assessments": [
+      { "type": "Weekly Exercises", "weight": 30 },
+      { "type": "Mid-term Exam", "weight": 30 },
+      { "type": "Final Project", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "T1405",
+    "description": "A rigorous introduction to the design and analysis of fundamental data structures and algorithms. Students learn how to organize data efficiently and select appropriate algorithms for sorting, searching, and graph traversal problems.",
+    "objectives": [
+      "Understand and implement core data structures: arrays, linked lists, stacks, queues, trees",
+      "Analyze algorithm complexity using Big-O notation",
+      "Implement and compare sorting algorithms",
+      "Traverse and manipulate trees and graphs",
+      "Choose the right data structure for a given problem"
+    ],
+    "prerequisites": [
+      "Programming in Python (T1403)",
+      "Algorithmics (T1406)"
+    ],
+    "chapters": [
+      { "title": "Arrays and Linked Lists", "description": "Static vs dynamic arrays, singly and doubly linked lists, insertion and deletion." },
+      { "title": "Stacks & Queues", "description": "LIFO/FIFO principles, implementations, practical applications." },
+      { "title": "Sorting Algorithms", "description": "Bubble, selection, insertion, merge sort, quicksort — correctness and complexity." },
+      { "title": "Searching Algorithms", "description": "Linear search, binary search, hash tables." },
+      { "title": "Trees", "description": "Binary trees, BST operations (insert, delete, search), traversals (inorder, preorder, postorder)." },
+      { "title": "Introduction to Graphs", "description": "Representations (adjacency matrix/list), BFS, DFS." }
+    ],
+    "credits": 5,
+    "hours": 48,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 30 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "T1406",
+    "description": "An introductory course on algorithmic thinking. Students learn to break down problems, design step-by-step solutions, and express them through pseudocode and flowcharts. This course lays the conceptual foundation for all future programming courses.",
+    "objectives": [
+      "Develop structured problem-solving habits",
+      "Write correct and readable pseudocode",
+      "Design algorithms using sequence, selection, and iteration",
+      "Understand the concept of correctness and termination",
+      "Implement basic algorithms in a high-level language"
+    ],
+    "prerequisites": [
+      "None — introductory course"
+    ],
+    "chapters": [
+      { "title": "What is an Algorithm?", "description": "Definition, properties, real-world examples, problem decomposition." },
+      { "title": "Pseudocode & Flowcharts", "description": "Notation, conventions, translating problems to pseudocode." },
+      { "title": "Sequence and Selection", "description": "If/else structures, nested conditions, decision trees." },
+      { "title": "Iteration", "description": "For loops, while loops, loop invariants." },
+      { "title": "Arrays & Simple Structures", "description": "Sequential access, search, min/max, sum and average." },
+      { "title": "Introduction to Functions", "description": "Modularizing algorithms, parameters and return values." }
+    ],
+    "credits": 3,
+    "hours": 30,
+    "assessments": [
+      { "type": "In-class Exercises", "weight": 40 },
+      { "type": "Written Exam", "weight": 60 }
+    ]
+  },
+  {
+    "course_code": "T1407",
+    "description": "This course introduces the theoretical foundations of computational complexity. Students study how to formally measure and classify the efficiency of algorithms, exploring concepts such as time complexity, space complexity, and complexity classes.",
+    "objectives": [
+      "Define and apply Big-O, Big-Omega, and Big-Theta notations",
+      "Analyze time and space complexity of recursive and iterative algorithms",
+      "Understand P vs NP and why it matters",
+      "Identify NP-complete problems and reduction techniques",
+      "Evaluate algorithm trade-offs in practical scenarios"
+    ],
+    "prerequisites": [
+      "Algorithmics (T1406)",
+      "Algorithmics and Data Structures I (T1405)"
+    ],
+    "chapters": [
+      { "title": "Asymptotic Notation", "description": "Big-O, Omega, Theta — formal definitions and practical analysis." },
+      { "title": "Recurrence Relations", "description": "Solving recurrences with substitution, recursion trees, and the Master Theorem." },
+      { "title": "Sorting Lower Bounds", "description": "Decision tree model, Omega(n log n) lower bound for comparison-based sorting." },
+      { "title": "Complexity Classes", "description": "P, NP, NP-hard, NP-complete — definitions and significance." },
+      { "title": "Reductions", "description": "Polynomial-time reductions, proving NP-completeness by reduction." },
+      { "title": "Practical Implications", "description": "Heuristics, approximation algorithms, when exact solutions are infeasible." }
+    ],
+    "credits": 4,
+    "hours": 36,
+    "assessments": [
+      { "type": "Problem Sets", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "T1408",
+    "description": "A continuation of Data Structures I, this course dives deeper into advanced structures and algorithm design strategies. Students will explore heaps, balanced trees, graph algorithms, and paradigms such as dynamic programming and greedy algorithms.",
+    "objectives": [
+      "Implement and analyze advanced data structures (heaps, AVL trees, hash maps)",
+      "Apply greedy algorithms to optimization problems",
+      "Use dynamic programming to solve complex subproblems",
+      "Implement shortest-path and minimum spanning tree algorithms",
+      "Compare algorithmic strategies and justify choices"
+    ],
+    "prerequisites": [
+      "Algorithmics and Data Structures I (T1405)",
+      "Complexity (T1407)"
+    ],
+    "chapters": [
+      { "title": "Heaps & Priority Queues", "description": "Min/max heaps, heapify, heap sort, priority queue applications." },
+      { "title": "Balanced Trees", "description": "AVL trees, rotations, B-trees introduction." },
+      { "title": "Hash Tables", "description": "Hash functions, collision resolution (chaining, open addressing), load factor." },
+      { "title": "Greedy Algorithms", "description": "Activity selection, Huffman encoding, interval scheduling." },
+      { "title": "Dynamic Programming", "description": "Memoization, tabulation, classic problems: Fibonacci, knapsack, LCS." },
+      { "title": "Graph Algorithms", "description": "Dijkstra, Bellman-Ford, Prim, Kruskal — correctness and complexity." }
+    ],
+    "credits": 5,
+    "hours": 50,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "T1409",
+    "description": "A practical introduction to the Linux operating system environment. Students will become comfortable with the command line, shell scripting, file system management, process control, and system administration basics — essential skills for any software engineer.",
+    "objectives": [
+      "Navigate and manage the Linux file system",
+      "Write effective Bash shell scripts",
+      "Manage processes, users, and permissions",
+      "Configure basic networking in Linux",
+      "Automate repetitive tasks with cron and scripting"
+    ],
+    "prerequisites": [
+      "Programming in Python (T1403)"
+    ],
+    "chapters": [
+      { "title": "Linux Fundamentals", "description": "History, distributions, terminal basics, man pages, file system hierarchy." },
+      { "title": "File System Management", "description": "ls, cd, cp, mv, rm, find, permissions (chmod, chown), symbolic links." },
+      { "title": "Text Processing", "description": "grep, sed, awk, cut, sort, pipes and redirection." },
+      { "title": "Shell Scripting", "description": "Variables, conditions, loops, functions, script arguments in Bash." },
+      { "title": "Process Management", "description": "ps, top, kill, fg/bg, jobs, signals." },
+      { "title": "Users & Permissions", "description": "User management, groups, sudo, file permissions model." },
+      { "title": "Networking & Automation", "description": "ifconfig, ssh, scp, cron jobs, system monitoring." }
+    ],
+    "credits": 3,
+    "hours": 32,
+    "assessments": [
+      { "type": "Lab Sessions", "weight": 50 },
+      { "type": "Scripting Project", "weight": 30 },
+      { "type": "Final Practical Exam", "weight": 20 }
+    ]
+  },
+  {
+    "course_code": "T1410",
+    "description": "This course introduces the fundamental principles of computer networking, with a focus on network architecture, the OSI and TCP/IP models, and how data is transmitted across networks. Students will gain both theoretical understanding and practical skills in network configuration.",
+    "objectives": [
+      "Understand the OSI and TCP/IP reference models",
+      "Explain how data is encapsulated and routed across networks",
+      "Configure basic LAN and WAN setups",
+      "Understand IP addressing, subnetting, and CIDR notation",
+      "Analyze network traffic using tools like Wireshark"
+    ],
+    "prerequisites": [
+      "Introduction to Linux (T1409)",
+      "Computer Architecture (recommended)"
+    ],
+    "chapters": [
+      { "title": "Introduction to Networking", "description": "Network types (LAN, WAN, MAN), topologies, transmission media." },
+      { "title": "OSI Model", "description": "Seven layers, role of each layer, encapsulation and decapsulation." },
+      { "title": "TCP/IP Stack", "description": "IP, TCP, UDP — addressing, port numbers, handshake." },
+      { "title": "IP Addressing & Subnetting", "description": "IPv4 classes, subnet masks, CIDR, NAT." },
+      { "title": "Network Devices", "description": "Hubs, switches, routers, access points — roles and comparison." },
+      { "title": "Routing Fundamentals", "description": "Static vs dynamic routing, routing tables, RIP, OSPF basics." },
+      { "title": "Practical Lab", "description": "Packet Tracer simulations, Wireshark traffic analysis." }
+    ],
+    "credits": 4,
+    "hours": 40,
+    "assessments": [
+      { "type": "Lab Work", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "M1402",
+    "description": "An introduction to relational databases: how data is modeled, organized, stored, and queried. Students learn to design database schemas, write SQL queries, and understand the fundamental principles behind database management systems.",
+    "objectives": [
+      "Model real-world data using Entity-Relationship diagrams",
+      "Design normalized relational schemas",
+      "Write queries in SQL (SELECT, JOIN, subqueries, aggregations)",
+      "Understand transactions and ACID properties",
+      "Use a real DBMS (PostgreSQL or MySQL)"
+    ],
+    "prerequisites": [
+      "Algorithmics (T1406)"
+    ],
+    "chapters": [
+      { "title": "Introduction to Databases", "description": "Database concepts, DBMS overview, relational model, advantages over file systems." },
+      { "title": "Entity-Relationship Modeling", "description": "Entities, attributes, relationships, cardinality, ER diagrams." },
+      { "title": "Relational Schema Design", "description": "Tables, primary/foreign keys, constraints, normalization (1NF–3NF)." },
+      { "title": "SQL Fundamentals", "description": "DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE), SELECT basics." },
+      { "title": "Advanced SQL", "description": "JOINs, subqueries, GROUP BY, HAVING, window functions." },
+      { "title": "Transactions & Integrity", "description": "ACID properties, BEGIN/COMMIT/ROLLBACK, integrity constraints." }
+    ],
+    "credits": 4,
+    "hours": 38,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 40 },
+      { "type": "Mid-term Written Exam", "weight": 25 },
+      { "type": "Final Project", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "M1403",
+    "description": "A deep dive into Object-Oriented Programming using Java. Students will master core OOP principles — encapsulation, inheritance, polymorphism, and abstraction — and learn to build well-structured, maintainable Java applications.",
+    "objectives": [
+      "Understand and apply the four pillars of OOP",
+      "Design class hierarchies using inheritance and interfaces",
+      "Handle exceptions and manage resources properly",
+      "Use the Java Collections Framework effectively",
+      "Write unit tests with JUnit"
+    ],
+    "prerequisites": [
+      "Programming in Python (T1403)",
+      "Algorithmics and Data Structures I (T1405)"
+    ],
+    "chapters": [
+      { "title": "Java Fundamentals", "description": "JVM, syntax, types, operators, control flow — compared to Python." },
+      { "title": "Classes & Objects", "description": "Fields, constructors, methods, access modifiers, this keyword." },
+      { "title": "Encapsulation & Abstraction", "description": "Getters/setters, abstract classes, interfaces." },
+      { "title": "Inheritance & Polymorphism", "description": "Extends, super, method overriding, dynamic dispatch." },
+      { "title": "Exception Handling", "description": "Checked vs unchecked exceptions, try/catch/finally, custom exceptions." },
+      { "title": "Collections Framework", "description": "ArrayList, LinkedList, HashMap, HashSet, iterators, generics introduction." },
+      { "title": "Testing with JUnit", "description": "Unit test basics, assertions, test-driven development principles." }
+    ],
+    "credits": 5,
+    "hours": 48,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Project", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "TI505M",
+    "description": "An advanced Java course covering modern programming paradigms beyond basic OOP. Students explore generic programming, functional-style Java with lambdas and streams, and concurrent programming with threads, executors, and synchronization primitives.",
+    "objectives": [
+      "Write type-safe code using Java Generics",
+      "Apply functional programming with lambda expressions and the Stream API",
+      "Understand concurrency concepts: threads, synchronization, race conditions",
+      "Use the java.util.concurrent framework effectively",
+      "Design thread-safe data structures and services"
+    ],
+    "prerequisites": [
+      "OOP with Java (M1403)"
+    ],
+    "chapters": [
+      { "title": "Generics", "description": "Generic classes, methods, bounded type parameters, wildcards, type erasure." },
+      { "title": "Functional Interfaces & Lambdas", "description": "Function, Predicate, Consumer, Supplier — lambda syntax and method references." },
+      { "title": "Stream API", "description": "Creating streams, intermediate and terminal operations, parallel streams." },
+      { "title": "Optional & Modern Java Features", "description": "Optional class, records, sealed classes, pattern matching (Java 17+)." },
+      { "title": "Threads & Concurrency Basics", "description": "Thread lifecycle, Runnable, race conditions, synchronized keyword." },
+      { "title": "java.util.concurrent", "description": "ExecutorService, Future, CompletableFuture, concurrent collections." },
+      { "title": "Concurrency Patterns", "description": "Producer-consumer, thread pools, deadlock detection and avoidance." }
+    ],
+    "credits": 5,
+    "hours": 50,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Project", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "TI508M",
+    "description": "An accessible first course in machine learning. Students will understand the fundamental concepts behind learning from data, implement key algorithms, and evaluate models using real-world datasets — without requiring deep mathematical prerequisites.",
+    "objectives": [
+      "Understand the machine learning workflow end-to-end",
+      "Implement and evaluate supervised learning models",
+      "Apply unsupervised techniques for clustering and dimensionality reduction",
+      "Prevent overfitting using regularization and cross-validation",
+      "Use scikit-learn and pandas for practical ML pipelines"
+    ],
+    "prerequisites": [
+      "Programming in Python (T1403)",
+      "Probability and Statistics (recommended)"
+    ],
+    "chapters": [
+      { "title": "Introduction to ML", "description": "Supervised, unsupervised, reinforcement learning — use cases and landscape." },
+      { "title": "Data Preparation", "description": "Pandas, missing values, encoding, normalization, train/test split." },
+      { "title": "Linear Models", "description": "Linear regression, logistic regression, gradient descent." },
+      { "title": "Decision Trees & Ensembles", "description": "Decision trees, random forests, bagging, boosting." },
+      { "title": "Unsupervised Learning", "description": "K-means clustering, hierarchical clustering, PCA." },
+      { "title": "Model Evaluation", "description": "Accuracy, precision, recall, F1, ROC-AUC, cross-validation." },
+      { "title": "Intro to Neural Networks", "description": "Perceptron, backpropagation, intro to deep learning with Keras." }
+    ],
+    "credits": 5,
+    "hours": 48,
+    "assessments": [
+      { "type": "Kaggle-style Lab Project", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI510M",
+    "description": "A practical course on modern JavaScript frontend development using popular frameworks. Students build real-world single-page applications, learn component-based architecture, manage state, consume REST APIs, and understand the modern frontend ecosystem.",
+    "objectives": [
+      "Understand the component-based architecture pattern",
+      "Build SPAs using React (or Vue)",
+      "Manage application state with hooks and context",
+      "Consume REST APIs asynchronously",
+      "Set up a modern frontend toolchain (Vite, npm, ESLint)"
+    ],
+    "prerequisites": [
+      "Web Programming 1 (T1402)",
+      "OOP with Java or Python (OOP concepts required)"
+    ],
+    "chapters": [
+      { "title": "Modern JavaScript (ES6+)", "description": "Arrow functions, destructuring, spread, modules, async/await, Promises." },
+      { "title": "Introduction to React", "description": "JSX, components, props, rendering lists, conditional rendering." },
+      { "title": "State & Hooks", "description": "useState, useEffect, useRef, custom hooks." },
+      { "title": "Routing", "description": "React Router — declarative routing, dynamic segments, navigation." },
+      { "title": "API Integration", "description": "fetch, axios, loading states, error handling, REST conventions." },
+      { "title": "State Management", "description": "Context API, introduction to Redux / Zustand." },
+      { "title": "Final Project", "description": "Full SPA: auth, routing, API calls, deployment on Vercel/Netlify." }
+    ],
+    "credits": 5,
+    "hours": 50,
+    "assessments": [
+      { "type": "Lab Work", "weight": 30 },
+      { "type": "Mid-term Quiz", "weight": 20 },
+      { "type": "Final SPA Project", "weight": 50 }
+    ]
+  },
+  {
+    "course_code": "TI515M",
+    "description": "A course on software design using Object-Oriented Analysis and Design (OOAD) principles and the Unified Modeling Language (UML). Students learn to model, design, and document complex software systems before writing a single line of code.",
+    "objectives": [
+      "Capture requirements using use case diagrams and user stories",
+      "Model system structure with class and object diagrams",
+      "Represent dynamic behavior with sequence and state machine diagrams",
+      "Apply SOLID principles to guide OO design",
+      "Recognize and apply key design patterns (GoF)"
+    ],
+    "prerequisites": [
+      "OOP with Java (M1403)"
+    ],
+    "chapters": [
+      { "title": "Introduction to OOAD", "description": "Software design process, the role of modeling, UML overview." },
+      { "title": "Requirements & Use Cases", "description": "Use case diagrams, actors, include/extend relationships." },
+      { "title": "Class & Object Diagrams", "description": "Classes, attributes, methods, associations, aggregation, composition, inheritance." },
+      { "title": "Sequence & Communication Diagrams", "description": "Modeling interactions between objects over time." },
+      { "title": "State & Activity Diagrams", "description": "State machines, transitions, guards, activity flows." },
+      { "title": "SOLID Principles", "description": "Single responsibility, Open/closed, Liskov, Interface segregation, Dependency inversion." },
+      { "title": "Design Patterns", "description": "Creational (Singleton, Factory), Structural (Adapter, Decorator), Behavioral (Observer, Strategy)." }
+    ],
+    "credits": 4,
+    "hours": 42,
+    "assessments": [
+      { "type": "UML Modeling Assignments", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "System Design Project", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI502M",
+    "description": "A deep dive into the protocols and applications that power modern networks. Students will study the TCP/IP stack in detail, explore key application-layer protocols (HTTP, DNS, SMTP), and implement networked programs using sockets.",
+    "objectives": [
+      "Understand TCP/IP protocol stack layers in detail",
+      "Analyze HTTP, DNS, DHCP, FTP, SMTP, and TLS",
+      "Program client-server applications using sockets",
+      "Understand how the web works end-to-end",
+      "Capture and analyze real network traffic with Wireshark"
+    ],
+    "prerequisites": [
+      "Network Architecture (T1410)",
+      "Introduction to Linux (T1409)"
+    ],
+    "chapters": [
+      { "title": "Transport Layer: TCP & UDP", "description": "Reliable transmission, flow control, congestion control, three-way handshake." },
+      { "title": "Application Layer Protocols", "description": "HTTP/1.1, HTTP/2, HTTP/3, request/response cycle, headers and status codes." },
+      { "title": "DNS", "description": "Name resolution, recursive vs iterative queries, DNS records, TTL." },
+      { "title": "Email Protocols", "description": "SMTP, IMAP, POP3 — how email traverses the internet." },
+      { "title": "Socket Programming", "description": "TCP and UDP sockets in Python/Java — building a simple chat server." },
+      { "title": "Security in Protocols", "description": "TLS/SSL handshake, certificates, HTTPS, common vulnerabilities." },
+      { "title": "Network Lab", "description": "Wireshark captures, protocol analysis, troubleshooting scenarios." }
+    ],
+    "credits": 4,
+    "hours": 44,
+    "assessments": [
+      { "type": "Lab Work & Protocol Analysis", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI504M",
+    "description": "A combined course covering both computer architecture and operating systems. Students learn how computers work at the hardware level and how operating systems manage hardware resources to provide services to applications.",
+    "objectives": [
+      "Understand CPU architecture, instruction sets, and memory hierarchy",
+      "Explain how operating systems manage processes, memory, and I/O",
+      "Understand virtual memory, paging, and segmentation",
+      "Analyze deadlock conditions and scheduling algorithms",
+      "Work with system calls and low-level programming in C"
+    ],
+    "prerequisites": [
+      "Introduction to Linux (T1409)",
+      "Algorithmics and Data Structures I (T1405)"
+    ],
+    "chapters": [
+      { "title": "Computer Organization", "description": "Von Neumann architecture, ALU, registers, bus, memory types." },
+      { "title": "Instruction Set Architecture", "description": "RISC vs CISC, assembly basics, instruction encoding." },
+      { "title": "Memory Hierarchy", "description": "Cache levels, locality, RAM, virtual memory principles." },
+      { "title": "OS Overview & Process Management", "description": "Kernel vs user space, process lifecycle, PCB, context switching." },
+      { "title": "CPU Scheduling", "description": "FCFS, SJF, Round Robin, priority scheduling, multilevel queues." },
+      { "title": "Memory Management", "description": "Paging, segmentation, page tables, TLB, page replacement algorithms." },
+      { "title": "Concurrency & Deadlocks", "description": "Mutual exclusion, semaphores, monitors, deadlock detection/avoidance." },
+      { "title": "File Systems & I/O", "description": "File system structure, inodes, I/O scheduling, device drivers." }
+    ],
+    "credits": 5,
+    "hours": 52,
+    "assessments": [
+      { "type": "Lab Assignments (C programming)", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 30 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI530M",
+    "description": "A broad introduction to the field of cybersecurity. Students will understand the threat landscape, core security principles, common attack vectors, and foundational defense mechanisms. This course builds the security mindset every engineer needs.",
+    "objectives": [
+      "Understand the CIA triad and core security principles",
+      "Identify and categorize common cyber threats and vulnerabilities",
+      "Explain how cryptographic primitives protect data",
+      "Apply basic web and network security techniques",
+      "Understand legal, ethical, and compliance frameworks"
+    ],
+    "prerequisites": [
+      "Networks 2 (TI502M)",
+      "Introduction to Linux (T1409)"
+    ],
+    "chapters": [
+      { "title": "Security Fundamentals", "description": "CIA triad, threat models, attack surfaces, security mindset." },
+      { "title": "Cryptography Basics", "description": "Symmetric encryption (AES), asymmetric (RSA), hashing (SHA), digital signatures." },
+      { "title": "Network Security", "description": "Firewalls, IDS/IPS, VPNs, network scanning, packet analysis." },
+      { "title": "Web Application Security", "description": "OWASP Top 10: SQL injection, XSS, CSRF, broken authentication." },
+      { "title": "System & OS Security", "description": "Privilege escalation, hardening, patch management, logging." },
+      { "title": "Social Engineering", "description": "Phishing, pretexting, baiting, security awareness." },
+      { "title": "Ethics, Law & Compliance", "description": "GDPR, responsible disclosure, penetration testing ethics, incident response." }
+    ],
+    "credits": 4,
+    "hours": 42,
+    "assessments": [
+      { "type": "CTF Challenges", "weight": 35 },
+      { "type": "Mid-term Exam", "weight": 30 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI603",
+    "description": "An advanced database course focusing on security, automation, and administration. Students will learn to protect databases from threats, automate routine operations using stored procedures and triggers, and manage database performance and replication.",
+    "objectives": [
+      "Implement role-based access control in a DBMS",
+      "Write stored procedures, functions, and triggers",
+      "Understand and apply transaction isolation levels",
+      "Set up automated backups and replication",
+      "Audit database activity and detect anomalies"
+    ],
+    "prerequisites": [
+      "Introduction to Databases (M1402)"
+    ],
+    "chapters": [
+      { "title": "Database Security Model", "description": "Users, roles, privileges, GRANT/REVOKE, row-level security." },
+      { "title": "Stored Procedures & Functions", "description": "PL/SQL or PL/pgSQL syntax, parameters, cursors, exception handling." },
+      { "title": "Triggers", "description": "BEFORE/AFTER triggers, row vs statement level, use cases and pitfalls." },
+      { "title": "Transactions & Isolation", "description": "ACID revisited, isolation levels (READ COMMITTED, SERIALIZABLE), locking." },
+      { "title": "Backup & Recovery", "description": "Full and incremental backups, point-in-time recovery, pg_dump, mysqldump." },
+      { "title": "Replication & High Availability", "description": "Master-slave replication, failover, connection pooling." },
+      { "title": "Auditing & Performance", "description": "Query optimization, EXPLAIN ANALYZE, index strategies, audit logs." }
+    ],
+    "credits": 4,
+    "hours": 44,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Project", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "TI609",
+    "description": "An introduction to cloud computing concepts, services, and architectures. Students will explore the major cloud providers (AWS, Azure, GCP), understand service models (IaaS, PaaS, SaaS), and deploy real applications to the cloud.",
+    "objectives": [
+      "Understand cloud computing models and deployment types",
+      "Navigate and use core AWS/Azure/GCP services",
+      "Deploy web applications to a cloud platform",
+      "Understand serverless computing and managed services",
+      "Apply cost optimization and cloud security basics"
+    ],
+    "prerequisites": [
+      "Introduction to Linux (T1409)",
+      "Network Architecture (T1410)"
+    ],
+    "chapters": [
+      { "title": "Cloud Computing Fundamentals", "description": "Definition, IaaS/PaaS/SaaS, public/private/hybrid cloud, benefits and trade-offs." },
+      { "title": "Virtualization & Containers", "description": "VMs, hypervisors, Docker basics, containerization vs virtualization." },
+      { "title": "Core Cloud Services", "description": "Compute (EC2/VM), storage (S3/Blob), databases (RDS), networking (VPC)." },
+      { "title": "Serverless & Managed Services", "description": "AWS Lambda, API Gateway, managed Kubernetes, FaaS concepts." },
+      { "title": "Cloud Deployment", "description": "CI/CD pipelines, Infrastructure as Code (Terraform basics), deployment strategies." },
+      { "title": "Security in the Cloud", "description": "IAM, shared responsibility model, encryption at rest and in transit." },
+      { "title": "Cost & Performance", "description": "Pricing models, auto-scaling, monitoring with CloudWatch/Azure Monitor." }
+    ],
+    "credits": 4,
+    "hours": 40,
+    "assessments": [
+      { "type": "Cloud Deployment Lab", "weight": 40 },
+      { "type": "Mid-term Quiz", "weight": 20 },
+      { "type": "Final Architecture Project", "weight": 40 }
+    ]
+  },
+  {
+    "course_code": "T1601",
+    "description": "An advanced course covering the theory and practice of artificial intelligence and machine learning. Students will build upon their introduction to ML and explore deep learning, reinforcement learning, and the engineering challenges of deploying AI systems at scale.",
+    "objectives": [
+      "Design and train deep neural networks using PyTorch or TensorFlow",
+      "Apply CNNs to image classification and object detection",
+      "Understand and implement sequence models (RNN, LSTM, Transformers)",
+      "Apply reinforcement learning to sequential decision problems",
+      "Deploy ML models as REST APIs"
+    ],
+    "prerequisites": [
+      "Introduction to Machine Learning (TI508M)"
+    ],
+    "chapters": [
+      { "title": "Deep Learning Foundations", "description": "Neural networks revisited, backpropagation, activation functions, optimization (Adam, SGD)." },
+      { "title": "Convolutional Neural Networks", "description": "Conv layers, pooling, AlexNet, VGG, ResNet — image classification." },
+      { "title": "Transfer Learning", "description": "Fine-tuning pretrained models, feature extraction, Hugging Face models." },
+      { "title": "Sequence Models", "description": "RNNs, LSTMs, GRUs — text classification, time series." },
+      { "title": "Transformers & Attention", "description": "Self-attention, BERT, GPT architecture overview." },
+      { "title": "Reinforcement Learning", "description": "MDP, Q-learning, policy gradients, OpenAI Gym." },
+      { "title": "MLOps & Deployment", "description": "Model serialization, FastAPI serving, MLflow, monitoring drift." }
+    ],
+    "credits": 6,
+    "hours": 58,
+    "assessments": [
+      { "type": "Research Project", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "T1602",
+    "description": "An advanced cybersecurity course focused on system and infrastructure security. Students will conduct penetration testing, analyze malware, implement security controls, and understand incident response procedures. Hands-on labs in a sandboxed environment are central to this course.",
+    "objectives": [
+      "Conduct structured penetration tests using industry methodologies",
+      "Analyze vulnerabilities in operating systems and applications",
+      "Understand malware behavior and reverse engineering basics",
+      "Implement SIEM and log analysis workflows",
+      "Lead and document an incident response process"
+    ],
+    "prerequisites": [
+      "Introduction to Cybersecurity (TI530M)"
+    ],
+    "chapters": [
+      { "title": "Penetration Testing Methodology", "description": "Reconnaissance, scanning, exploitation, post-exploitation, reporting (PTES, OWASP)." },
+      { "title": "Vulnerability Assessment", "description": "CVE database, CVSS scoring, Nessus, OpenVAS." },
+      { "title": "Exploitation Techniques", "description": "Buffer overflows, privilege escalation, Metasploit framework." },
+      { "title": "Malware Analysis", "description": "Static vs dynamic analysis, sandboxing, YARA rules." },
+      { "title": "SIEM & Log Analysis", "description": "ELK stack, log correlation, alert rules, threat hunting." },
+      { "title": "Incident Response", "description": "IR phases (preparation, identification, containment, eradication, recovery), forensics basics." },
+      { "title": "Red vs Blue Team Exercises", "description": "Simulated attacks and defenses in a lab environment." }
+    ],
+    "credits": 6,
+    "hours": 56,
+    "assessments": [
+      { "type": "Pentesting Lab Reports", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Red Team/Blue Team Challenge", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "T1603",
+    "description": "A comprehensive course on building native and cross-platform mobile applications. Students will develop iOS and Android apps using React Native (or Flutter), covering UI design, device APIs, offline storage, push notifications, and App Store deployment.",
+    "objectives": [
+      "Build cross-platform mobile apps with React Native or Flutter",
+      "Design mobile-first UIs following platform guidelines (HIG, Material Design)",
+      "Integrate device APIs: camera, GPS, accelerometer, notifications",
+      "Manage offline data with AsyncStorage or SQLite",
+      "Publish an app to the Google Play Store and Apple App Store"
+    ],
+    "prerequisites": [
+      "Web Programming 2 (TI510M)"
+    ],
+    "chapters": [
+      { "title": "Mobile Development Overview", "description": "Native vs cross-platform, React Native vs Flutter, project setup." },
+      { "title": "UI Components & Navigation", "description": "Core components, StyleSheet, React Navigation (stack, tab, drawer)." },
+      { "title": "State Management in Mobile", "description": "useState, useContext, Redux Toolkit for mobile." },
+      { "title": "Device APIs", "description": "Camera, geolocation, push notifications (Expo Notifications), permissions." },
+      { "title": "Offline Storage & Networking", "description": "AsyncStorage, SQLite, fetching APIs, offline-first patterns." },
+      { "title": "Authentication", "description": "JWT auth, OAuth/social login, secure storage of tokens." },
+      { "title": "Testing & Deployment", "description": "Jest, Detox for E2E, building APK/IPA, App Store submission." }
+    ],
+    "credits": 5,
+    "hours": 52,
+    "assessments": [
+      { "type": "Lab Assignments", "weight": 30 },
+      { "type": "Mid-term Exam", "weight": 20 },
+      { "type": "Final Mobile App Project", "weight": 50 }
+    ]
+  },
+  {
+    "course_code": "T1701",
+    "description": "An advanced course on cloud-native architecture and microservices. Students will design, build, and deploy distributed systems using Docker, Kubernetes, and service mesh technologies, applying patterns like API gateways, circuit breakers, and event-driven communication.",
+    "objectives": [
+      "Design microservices architectures from monoliths",
+      "Containerize applications with Docker and orchestrate with Kubernetes",
+      "Implement inter-service communication (REST, gRPC, message queues)",
+      "Apply resilience patterns: circuit breaker, retry, rate limiting",
+      "Set up CI/CD pipelines for cloud-native deployment"
+    ],
+    "prerequisites": [
+      "Cloud Computing Fundamentals (TI609)",
+      "Networks 2 (TI502M)"
+    ],
+    "chapters": [
+      { "title": "Microservices Architecture", "description": "Monolith vs microservices, bounded contexts, DDD basics, trade-offs." },
+      { "title": "Docker Deep Dive", "description": "Dockerfile, multi-stage builds, Docker Compose, registries." },
+      { "title": "Kubernetes", "description": "Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, Helm." },
+      { "title": "Inter-Service Communication", "description": "REST vs gRPC, API Gateway pattern, message brokers (Kafka, RabbitMQ)." },
+      { "title": "Resilience Patterns", "description": "Circuit breaker (Hystrix/Resilience4j), retry, timeout, bulkhead." },
+      { "title": "Observability", "description": "Distributed tracing (Jaeger), metrics (Prometheus), logging (ELK)." },
+      { "title": "CI/CD for Cloud-Native", "description": "GitHub Actions, GitOps, ArgoCD, blue-green and canary deployments." }
+    ],
+    "credits": 6,
+    "hours": 58,
+    "assessments": [
+      { "type": "Architecture Lab", "weight": 40 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final System Design Project", "weight": 35 }
+    ]
+  },
+  {
+    "course_code": "T1702",
+    "description": "A practical course on managing IT projects from inception to delivery. Students learn to apply both traditional (Waterfall) and agile (Scrum, Kanban) methodologies, manage risks, lead teams, and communicate with stakeholders effectively.",
+    "objectives": [
+      "Understand and compare project management methodologies",
+      "Plan and track projects using Gantt charts and backlogs",
+      "Apply Scrum: sprints, retrospectives, standups, backlog refinement",
+      "Manage project risks, budgets, and stakeholder expectations",
+      "Lead a team project from requirements to delivery"
+    ],
+    "prerequisites": [
+      "Object-Oriented Analysis & Design with UML (TI515M)"
+    ],
+    "chapters": [
+      { "title": "Project Management Fundamentals", "description": "Project lifecycle, scope, time, cost triangle, stakeholder analysis." },
+      { "title": "Traditional Methods", "description": "Waterfall, V-model, WBS, Gantt charts, milestone planning." },
+      { "title": "Agile & Scrum", "description": "Agile manifesto, Scrum framework, sprints, ceremonies, artifacts." },
+      { "title": "Kanban & Lean", "description": "Kanban board, WIP limits, flow metrics, Lean principles." },
+      { "title": "Risk Management", "description": "Risk identification, probability-impact matrix, mitigation strategies." },
+      { "title": "Team Leadership & Communication", "description": "Roles and responsibilities, conflict resolution, client communication." },
+      { "title": "Project Delivery", "description": "UAT, release planning, retrospectives, post-mortem analysis." }
+    ],
+    "credits": 4,
+    "hours": 40,
+    "assessments": [
+      { "type": "Group Project (Scrum simulation)", "weight": 50 },
+      { "type": "Individual Reflection Report", "weight": 20 },
+      { "type": "Final Exam", "weight": 30 }
+    ]
+  },
+  {
+    "course_code": "T1703",
+    "description": "An advanced course on Big Data technologies, distributed storage, and scalable processing frameworks. Students will work with Hadoop, Spark, and modern data lake architectures to process and analyze massive datasets.",
+    "objectives": [
+      "Understand the Big Data ecosystem and its challenges (Volume, Velocity, Variety)",
+      "Process large datasets with Apache Spark (batch and streaming)",
+      "Design scalable data lake and data warehouse architectures",
+      "Apply ETL pipelines and data orchestration with Airflow",
+      "Visualize insights from large-scale data"
+    ],
+    "prerequisites": [
+      "Introduction to Machine Learning (TI508M)",
+      "Cloud Computing and Micro-services (T1701)"
+    ],
+    "chapters": [
+      { "title": "Big Data Fundamentals", "description": "The 5 Vs, Hadoop ecosystem overview, HDFS, MapReduce concept." },
+      { "title": "Apache Spark", "description": "RDDs, DataFrames, Spark SQL, transformations vs actions, lazy evaluation." },
+      { "title": "Spark Streaming", "description": "DStreams, Structured Streaming, Kafka integration, windowing." },
+      { "title": "Data Lake Architecture", "description": "Lambda vs Kappa architecture, data lake vs data warehouse, Delta Lake." },
+      { "title": "ETL & Orchestration", "description": "Apache Airflow DAGs, scheduling, data quality checks." },
+      { "title": "NoSQL Databases", "description": "Cassandra, MongoDB, HBase — CAP theorem, use case selection." },
+      { "title": "Data Visualization at Scale", "description": "Superset, Grafana, dashboarding best practices for Big Data." }
+    ],
+    "credits": 6,
+    "hours": 58,
+    "assessments": [
+      { "type": "Big Data Pipeline Project", "weight": 45 },
+      { "type": "Mid-term Exam", "weight": 25 },
+      { "type": "Final Exam", "weight": 30 }
+    ]
+  }
+]

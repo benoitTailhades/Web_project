@@ -511,29 +511,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Les ` (backticks) permettent d'écrire du HTML sur plusieurs lignes et d'insérer des variables avec ${}
                     const articleHTML = `
                         <div class="research-card">
-                           <!-- <img src="${article.image}"--> 
+                           
                            <div class="research-img">
-                            <div class="starburst">
-                              <svg class="starburst-svg" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-                                <g transform="translate(60,40)">
-                                  <circle r="18" fill="#1a7aaa"/>
-                                  <line x1="0" y1="-38" x2="0" y2="38" stroke="#1a7aaa" stroke-width="6"/>
-                                  <line x1="-38" y1="0" x2="38" y2="0" stroke="#1a7aaa" stroke-width="6"/>
-                                  <line x1="-27" y1="-27" x2="27" y2="27" stroke="#1a7aaa" stroke-width="5"/>
-                                  <line x1="27" y1="-27" x2="-27" y2="27" stroke="#1a7aaa" stroke-width="5"/>
-                                  <line x1="-10" y1="-36" x2="10" y2="36" stroke="#1a7aaa" stroke-width="4"/>
-                                  <line x1="10" y1="-36" x2="-10" y2="36" stroke="#1a7aaa" stroke-width="4"/>
-                                  <line x1="-36" y1="-10" x2="36" y2="10" stroke="#1a7aaa" stroke-width="4"/>
-                                  <line x1="36" y1="-10" x2="-36" y2="10" stroke="#1a7aaa" stroke-width="4"/>
-                                </g>
-                              </svg>
-                            </div>
+                            <img src="${article.image}" alt="Image of ${article.title}">
                           </div>
                            <div class="info">
                             <h3>${article.title}</h3>
                             <p>${article.description}</p>
-                            <a href="article.html">See Article</a>
-                            <!--<a href="${article.article_page}">See Article</a>-->
+                            <a href="${article.article_page}">See Article</a>
                           </div>
                         </div>
                     `;
