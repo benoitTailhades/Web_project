@@ -1,3 +1,4 @@
+# Github Link : https://github.com/benoitTailhades/Fotso_Tailhades_WebProject.git
 # EFREI Web Project - Plateforme Académique
 
 Ce projet est une plateforme web interactive développée dans le cadre du cursus à l'EFREI. Elle regroupe des informations sur les formations, les enseignants, la recherche et un planning dynamique des cours et permanences.
