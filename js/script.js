@@ -1,4 +1,8 @@
+// ════════════════════════════════════════════════════════════════
+//  PLANNING — Data loading & calendar
+// ════════════════════════════════════════════════════════════════
 
+// Fetches office hour events from the JSON data file
 async function loadEvents(){
     try{
         const response = await fetch("../json/office_hour.json")
@@ -11,11 +15,15 @@ async function loadEvents(){
         console.error("Error: "+error)
     }
 }
+
+// Debug helper: logs each event object to the console
 function displayEvents(events){
     events.forEach(event => {
         console.log(JSON.stringify(event));
     })
 }
+
+// Reads the filter dropdowns, applies criteria, and rebuilds the calendar
 async function applyFilter() {
     let events = await loadEvents();
     const year = document.getElementById("filter-year").value;
@@ -27,18 +35,21 @@ async function applyFilter() {
     }
     events = filterEvents(events, myCriteria);
     buildCalendar(events);
-
 }
+
+// Returns only the events that match every non-empty criterion
+// An empty string criterion means "no filter on this field"
 function filterEvents(events, criteria) {
     return events.filter(event => {
-        // On vérifie chaque critère. Si le critère n'est pas fourni (null/undefined), on laisse passer l'event.
-        const matchProf = !criteria.prof || event.teacher === criteria.prof;
-        const matchYear = !criteria.year || event.year === criteria.year;
+        const matchProf     = !criteria.prof     || event.teacher  === criteria.prof;
+        const matchYear     = !criteria.year     || event.year     === criteria.year;
         const matchSemester = !criteria.semester || event.semester === criteria.semester;
-
         return matchProf && matchYear && matchSemester;
     });
 }
+
+// Converts the flat JSON event array into a keyed object: { "MON-8": [...], "TUE-10": [...] }
+// so the calendar builder can look up events by day+hour in O(1)
 function convertToCalendarEvents(data) {
     const events = {};
 
@@ -50,6 +61,7 @@ function convertToCalendarEvents(data) {
         "event-purple"
     ];
 
+    // Formats a 24h hour/minute pair into a 12h AM/PM string with a bullet indicator
     function formatHour(hour, min) {
         let period = hour >= 12 ? "PM" : "AM";
         let h = hour % 12;
@@ -58,16 +70,15 @@ function convertToCalendarEvents(data) {
     }
 
     data.forEach((event, index) => {
-        // Parse date: "MON-8-00"
+        // Date format in the JSON: "MON-8-00"  →  day, hour, minute
         const [day, hour, min] = event.date.split("-");
         const h = parseInt(hour);
         const m = parseInt(min);
 
-
         const key = `${day}-${h}`;
 
         const formattedEvent = {
-            cls: colors[index % colors.length], // couleur automatique
+            cls: colors[index % colors.length], // cycle through color classes automatically
             t: formatHour(h, m),
             b: `${event.title} (${event.teacher})`,
             h: event.duration
@@ -76,140 +87,173 @@ function convertToCalendarEvents(data) {
         if (!events[key]) {
             events[key] = [];
         }
-
         events[key].push(formattedEvent);
     });
 
     return events;
 }
-function buildCalendar(data) {
-    // Build calendar grid
 
+// Builds (or rebuilds) the full calendar grid from scratch
+// Called on page load and every time filters are applied
+function buildCalendar(data) {
+    // Only run on the planning page
     var container = document.querySelector('.planning');
     if (!container) {
         return;
     }
 
+    // Generate hour labels from 7 AM to 5 PM
     var hours = [];
     var grid = document.getElementById('cal-grid');
-    grid.textContent = '';
+    grid.textContent = ''; // clear previous content before rebuilding
     for (let h = 7; h <= 17; h++) {
         hours.push(h < 12 ? h + ' AM' : (h === 12 ? '12 PM' : (h-12) + ' PM'));
     }
+
     const events = convertToCalendarEvents(data);
     const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
     const now = new Date();
     const hour = now.getHours();
-    const minuteRatio = now.getMinutes()/60;
-    const displayHour = hour < 17;
+    const minuteRatio = now.getMinutes() / 60;
+    const displayHour = hour < 17; // only show the time indicator during calendar hours
     const currentDay = days[now.getDay()];
 
+    // Highlight today's column header
     const daylabel = document.querySelectorAll('.day-label');
     if (daylabel[now.getDay()]) {
         daylabel[now.getDay()].classList.add('today-header');
     }
+
+    // Build the grid row by row (one row per hour)
     for (var hi = 0; hi < hours.length; hi++) {
         var hourNum = hi + 7;
+
+        // Time label cell on the left
         var timeEl = document.createElement('div');
         timeEl.className = 'time-label';
         timeEl.textContent = hours[hi];
         grid.appendChild(timeEl);
+
+        // One cell per day of the week
         for (var di = 0; di < days.length; di++) {
             var cell = document.createElement('div');
-            cell.className = 'cal-cell' + (days[di]=== currentDay ? ' today' : '');
+            cell.className = 'cal-cell' + (days[di] === currentDay ? ' today' : '');
+
             var key = days[di] + '-' + hourNum;
+
+            // Inject event blocks if any exist for this day/hour slot
             if (events[key]) {
                 events[key].forEach(function(ev) {
                     var evEl = document.createElement('div');
                     evEl.className = 'event ' + ev.cls;
                     evEl.innerHTML = '<strong>' + ev.t + '</strong><br>' + ev.b;
                     evEl.style.top = '2px';
-                    evEl.style.height = ev.h * 56 + "px";
+                    evEl.style.height = ev.h * 56 + "px"; // height proportional to duration
                     cell.appendChild(evEl);
                 });
             }
-            if ((hour === hourNum) && (displayHour) && (cell.className === 'cal-cell today')){
-                let hLine = document.createElement('div')
+
+            // Draw the current-time red line inside today's column
+            if ((hour === hourNum) && displayHour && (cell.className === 'cal-cell today')) {
+                let hLine = document.createElement('div');
                 hLine.className = 'cal-h-line';
-                hLine.style.top = 56* minuteRatio + "px"
+                hLine.style.top = 56 * minuteRatio + "px"; // position proportional to elapsed minutes
                 cell.appendChild(hLine);
             }
+
             grid.appendChild(cell);
         }
     }
 }
+
+// ════════════════════════════════════════════════════════════════
+//  CONTACT — Form validation
+// ════════════════════════════════════════════════════════════════
+
+// Validates all form fields and shows inline feedback without submitting
 function checkSubmit(){
     const form = document.getElementById('myForm');
-    const feedback = document.getElementById("formFeedback")
-    form.addEventListener('submit', (event) => {event.preventDefault();})
+    const feedback = document.getElementById("formFeedback");
+
+    // Prevent default browser submission
+    form.addEventListener('submit', (event) => { event.preventDefault(); });
+
     const formData = new FormData(form);
     var firstName = formData.get('firstname');
-    var lastName = formData.get('lastname');
-    var email = formData.get('email');
-    var phone = formData.get('phone');
-    var message = document.getElementById('message').value;
-    if (!firstName){
+    var lastName  = formData.get('lastname');
+    var email     = formData.get('email');
+    var phone     = formData.get('phone');
+    var message   = document.getElementById('message').value;
+
+    // Sequential validation: show the first error found, or a success message
+    if (!firstName) {
         feedback.style.color = 'red';
         feedback.textContent = 'Please enter your first name';
-    }else if (!lastName){
+    } else if (!lastName) {
         feedback.style.color = 'red';
         feedback.textContent = 'Please enter your last name';
-    }else if (!phone || phone.length !== 10){
+    } else if (!phone || phone.length !== 10) {
         feedback.style.color = 'red';
         feedback.textContent = 'Please enter a valid phone number';
-    }else if (!message){
+    } else if (!message) {
         feedback.style.color = 'red';
         feedback.textContent = 'Please enter your message';
-    }else if (!email.includes('@gmail.') && !email.includes('@efrei.net')){
+    } else if (!email.includes('@gmail.') && !email.includes('@efrei.net')) {
         feedback.style.color = 'red';
         feedback.textContent = 'Please enter a valid email';
-
-    }else{
+    } else {
         feedback.style.color = 'green';
-        feedback.textContent = 'Thanks your message was successfully send !';
-    }
-}
-// Fonction pour faire défiler le carrousel (attachée aux boutons onclick)
-function scrollCarousel(year, direction) {
-    const track = document.getElementById(`track-${year}`);
-    if (track) {
-        // On scrolle de la largeur visible du conteneur (ou de la largeur d'une carte)
-        const scrollAmount = track.clientWidth *1.05;
-        track.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        feedback.textContent = 'Thanks, your message was successfully sent!';
     }
 }
 
+// Blocks non-numeric keystrokes in the phone number input field
 const phoneInput = document.getElementById('phone');
-
 if (phoneInput) {
     phoneInput.addEventListener('keydown', (event) => {
-        // Allow: backspace, delete, tab, escape, and enter
         const allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter'];
         if (allowedKeys.includes(event.key)) return;
 
-        // Block if the character is not a digit
+        // Reject anything that is not a digit or is a space
         if (isNaN(event.key) || event.key === ' ') {
             event.preventDefault();
-            document.getElementById("phoneInput").value--;
         }
     });
 }
 
-/* ── Helpers ── */
+// ════════════════════════════════════════════════════════════════
+//  FORMATIONS — Carousel scroll helper
+// ════════════════════════════════════════════════════════════════
+
+// Scrolls the carousel track for a given year left (-1) or right (+1)
+function scrollCarousel(year, direction) {
+    const track = document.getElementById(`track-${year}`);
+    if (track) {
+        const scrollAmount = track.clientWidth * 1.05; // scroll roughly one viewport width
+        track.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+}
+
+// ════════════════════════════════════════════════════════════════
+//  SYLLABUS — HTML builder helpers
+// ════════════════════════════════════════════════════════════════
+
+// Returns a simple "not found" message block
 function notFound(msg) {
     return `<div class="syllabus-loader">${msg}</div>`;
 }
 
+// Extracts the initials from a full name (e.g. "John Doe" → "JD")
 function initials(name) {
     return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 }
 
-/* ── Constructeur HTML principal ── */
+// Generates the full syllabus page HTML from a course data object
 function buildSyllabus(course) {
     const d  = course.course_data;
     const ov = d.overview;
 
-    // Évaluation : trier par poids décroissant
+    // Sort evaluation entries by weight descending for the table
     const evalEntries = Object.entries(d.evaluation)
         .map(([k, v]) => ({ label: k.replace(/_/g, ' '), pct: parseInt(v) }))
         .sort((a, b) => b.pct - a.pct);
@@ -250,7 +294,7 @@ function buildSyllabus(course) {
     <!-- ── BODY ── -->
     <div class="syllabus-body">
 
-      <!-- Colonne principale -->
+      <!-- Main column -->
       <div class="syllabus-main">
 
         <!-- Syllabus topics -->
@@ -269,7 +313,7 @@ function buildSyllabus(course) {
           </ul>
         </div>
 
-        <!-- Evaluation -->
+        <!-- Evaluation breakdown table with progress bars -->
         <div class="syl-section">
           <h2><span class="icon"></span> Evaluation</h2>
           <table class="eval-table">
@@ -298,9 +342,10 @@ function buildSyllabus(course) {
 
       </div>
 
-      <!-- Sidebar droite -->
+      <!-- Right sidebar -->
       <aside class="syllabus-sidebar">
-        <!-- Responsables -->
+
+        <!-- Responsible teachers -->
         <div class="sidebar-card">
           <h3>Responsible</h3>
           <div class="responsible-item">
@@ -319,7 +364,7 @@ function buildSyllabus(course) {
           </div>
         </div>
 
-        <!-- Prérequis -->
+        <!-- Prerequisite tags -->
         <div class="sidebar-card">
           <h3>Prerequisites</h3>
           <div class="prereq-tags">
@@ -332,113 +377,100 @@ function buildSyllabus(course) {
   `;
 }
 
-// Animated Nav bar script
+// ════════════════════════════════════════════════════════════════
+//  DOM READY — All event listeners and page initialisation
+// ════════════════════════════════════════════════════════════════
+
+// Animated navigation underline — moves to the hovered or active nav item
 document.addEventListener('DOMContentLoaded', () => {
-    const underline = document.querySelector('.nav-underline');
-    const items = document.querySelectorAll('.nav-item');
+    const underline  = document.querySelector('.nav-underline');
+    const items      = document.querySelectorAll('.nav-item');
     const activeItem = document.querySelector('.nav-item.active');
 
     function moveUnderline(element) {
         if (element) {
             underline.style.width = element.offsetWidth + 'px';
-            underline.style.left = element.offsetLeft + 'px';
+            underline.style.left  = element.offsetLeft  + 'px';
         }
     }
 
-    // Position initiale sur l'onglet actif au chargement
+    // Position the underline on the active tab when the page loads
     if (activeItem) {
         moveUnderline(activeItem);
     }
 
-    // Effet de glisse au survol (optionnel mais recommandé pour l'effet de glisse)
+    // Slide the underline to the hovered item
     items.forEach(item => {
         item.addEventListener('mouseenter', (e) => moveUnderline(e.target));
     });
 
-    // Retour à l'onglet actif quand la souris quitte la nav
+    // Return the underline to the active tab when the cursor leaves the nav
     document.querySelector('nav ul').addEventListener('mouseleave', () => {
         moveUnderline(activeItem);
     });
 });
 
-// Calendar script
-document.addEventListener('DOMContentLoaded', async () =>{
+// Planning page — loads and renders the calendar on page load
+document.addEventListener('DOMContentLoaded', async () => {
     var events = await loadEvents();
-    const myCriteria = {
-        prof:"",
-        year:"",
-        semester:""
-    }
+    const myCriteria = { prof: "", year: "", semester: "" };
     events = filterEvents(events, myCriteria);
     buildCalendar(events);
-})
+});
 
-// Animated Nav bar for mobile (Hamburger menu)
+// Mobile hamburger menu — toggles the nav list visibility and the X animation
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
+    const navList   = document.getElementById('nav-list');
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            // Bascule la classe "active" pour afficher/cacher le menu
-            navList.classList.toggle('active');
-
-            // Animation optionnelle du hamburger en "X"
-            hamburger.classList.toggle('open');
+            navList.classList.toggle('active');   // show/hide the menu
+            hamburger.classList.toggle('open');   // animate the icon into an X
         });
     }
 });
-// Script for the dynamic Teacher pages
-document.addEventListener('DOMContentLoaded', () => {
 
-    // On cible le conteneur vide dans teachers.html
+// Teachers page — dynamically renders the teacher list from JSON
+document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('teachers-list');
 
-    // On vérifie qu'on est bien sur la bonne page avant d'exécuter le code
     if (container) {
-
-        // On récupère le fichier JSON
         fetch('../json/teacher_data.json')
             .then(response => response.json())
             .then(data => {
-
-                // On vide le conteneur au cas où
                 container.innerHTML = '';
 
-                // On boucle sur chaque professeur du fichier JSON
+                // Create one teacher row card per entry in the JSON
                 data.forEach(prof => {
-
-                    // On crée le HTML pour un professeur
-                    // Les ` (backticks) permettent d'écrire du HTML sur plusieurs lignes et d'insérer des variables avec ${}
                     const profHTML = `
                         <div class="teacher-row">
                             <div class="text">
                                 <h2>${prof.nom}</h2>
-                                <p><strong>Formation :</strong> ${prof.formation}</p>
+                                <p><strong>Formation:</strong> ${prof.formation}</p>
                                 <a class="btn-black" href="teacher_profile.html?id=${prof.id}">See profile</a>
                             </div>
                             <div class="teacher-img">
-                                <img src="${prof.photo}" alt="Photo de ${prof.nom}">
+                                <img src="${prof.photo}" alt="Photo of ${prof.nom}">
                             </div>
                         </div>
                     `;
-
-                    // On ajoute ce code HTML à l'intérieur de notre conteneur
                     container.innerHTML += profHTML;
                 });
             })
-            .catch(error => console.error('Error while loading teachers data:', error));
+            .catch(error => console.error('Error while loading teacher data:', error));
     }
 });
-// Script for dynamic Teacher profile page
-document.addEventListener('DOMContentLoaded', () => {
 
+// Teacher profile page — loads the teacher matching the URL ?id= parameter,
+// then fetches their related articles and injects everything into the page
+document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const teacherId = parseInt(urlParams.get('id'));
     const container = document.getElementById('teacher_profile');
 
     if (container) {
-        // On utilise Promise.all pour récupérer les deux fichiers JSON simultanément
+        // Fetch both data sources in parallel for better performance
         Promise.all([
             fetch('../json/teacher_data.json').then(response => response.json()),
             fetch('../json/articles_data.json').then(response => response.json())
@@ -446,19 +478,17 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(([teachersData, articlesData]) => {
                 container.innerHTML = '';
 
-                // On cherche le professeur correspondant à l'ID
                 const teacher = teachersData.find(t => t.id === teacherId);
 
                 if (teacher) {
-                    // On filtre les articles pour ne garder que ceux écrits par ce professeur
+                    // Keep only the articles whose id is listed in the teacher's article_id array
                     const teacherArticles = articlesData.filter(article =>
                         teacher.article_id && teacher.article_id.includes(article.id)
                     );
 
-                    // On génère le code HTML pour la liste des articles
+                    // Build the articles list HTML, or show a fallback message
                     let articlesHTML = '';
                     if (teacherArticles.length > 0) {
-                        // Si le prof a des articles, on crée une liste de liens
                         articlesHTML = '<ul>' + teacherArticles.map(article => `
                         <li style="margin-bottom: 10px;">
                             <a href="${article.article_page}" style="color: var(--text-dark); font-weight: bold; text-decoration: none;">
@@ -469,26 +499,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         </li>
                     `).join('') + '</ul>';
                     } else {
-                        // Si le tableau article_id est vide
                         articlesHTML = '<p style="color: var(--text-gray); font-style: italic;">No articles published yet.</p>';
                     }
 
-                    // On injecte le tout dans la page
                     container.innerHTML = `
                 <div class="profile-hero">
                     <div class="text">
                         <h1>${teacher.nom}</h1>
                         <p>${teacher.formation} teacher</p>
-                        <h2>Office hour</h2>
+                        <h2>Office hours</h2>
                         <p>${teacher.office_hours}</p>
                     </div>
                     <div class="butterfly-img">
-                        <img src="${teacher.photo}" alt="Photo de ${teacher.nom}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="${teacher.photo}" alt="Photo of ${teacher.nom}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                     </div>
                 </div>
                 <div class="profile-cols">
                     <div>
-                        <h3>Biographie</h3>
+                        <h3>Biography</h3>
                         <p>${teacher.biographie}</p>
                     </div>
                     <div>
@@ -503,46 +531,39 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error("Error fetching data:", error));
     }
 });
-//Script for dynamic Research page
+
+// Research page — dynamically renders the article cards from JSON
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('research-list')
+    const container = document.getElementById('research-list');
 
     if (container) {
         fetch('../json/articles_data.json')
             .then(response => response.json())
             .then(data => {
-
-                // On vide le conteneur au cas où
                 container.innerHTML = '';
 
-                // On boucle sur chaque professeur du fichier JSON
+                // Create one research card per article entry
                 data.forEach(article => {
-
-                    // On crée le HTML pour un professeur
-                    // Les ` (backticks) permettent d'écrire du HTML sur plusieurs lignes et d'insérer des variables avec ${}
                     const articleHTML = `
                         <div class="research-card">
-                           
-                           <div class="research-img">
-                            <img src="${article.image}" alt="Image of ${article.title}">
-                          </div>
-                           <div class="info">
-                            <h3>${article.title}</h3>
-                            <p>${article.description}</p>
-                            <a href="${article.article_page}">See Article</a>
-                          </div>
+                            <div class="research-img">
+                                <img src="${article.image}" alt="Image of ${article.title}">
+                            </div>
+                            <div class="info">
+                                <h3>${article.title}</h3>
+                                <p>${article.description}</p>
+                                <a href="${article.article_page}">See Article</a>
+                            </div>
                         </div>
                     `;
-
                     container.innerHTML += articleHTML;
                 });
             })
-            .catch(error => console.error('Error while loading teachers data:', error));
+            .catch(error => console.error('Error while loading article data:', error));
     }
+});
 
-})
-
-// Script for dynamic Formations page (Carousels)
+// Formations page — groups courses by year, then renders a carousel section for each
 document.addEventListener('DOMContentLoaded', () => {
     const formationsContainer = document.getElementById('formations-container');
 
@@ -550,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('../json/formations_data.json')
             .then(response => response.json())
             .then(data => {
-                // 1. Grouper les cours par année
+                // Group courses by their 'years' field (e.g. "P1", "ING2")
                 const groupedByYear = data.reduce((acc, course) => {
                     if (!acc[course.years]) {
                         acc[course.years] = [];
@@ -559,17 +580,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     return acc;
                 }, {});
 
-                // 2. Définir l'ordre d'affichage souhaité
+                // Display years in a fixed curriculum order
                 const yearsOrder = ["P1", "P2", "ING1", "ING2", "ING3"];
 
-                // 3. Vider le conteneur
                 formationsContainer.innerHTML = '';
 
-                // 4. Générer le HTML pour chaque année
                 yearsOrder.forEach(year => {
                     if (groupedByYear[year] && groupedByYear[year].length > 0) {
 
-                        // Création du HTML pour les cartes de cette année
+                        // Build the card HTML for each course in this year
                         const cardsHTML = groupedByYear[year].map(course => `
                             <a class="testimonial-card" href="syllabus.html?id=${course.id}">
                                 <div class="card-image-container">
@@ -581,17 +600,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             </a>
                         `).join('');
 
-                        // Création de la section complète avec le carrousel
+                        // Wrap the cards in a carousel section with prev/next buttons
                         const sectionHTML = `
                             <div class="formation-section" id="${year}">
                                 <h2>${year}</h2>
                                 <div class="carousel-wrapper">
                                     <button class="carousel-btn prev" onclick="scrollCarousel('${year}', -1)">&#10094;</button>
-                                    
                                     <div class="carousel-track" id="track-${year}">
                                         ${cardsHTML}
                                     </div>
-                                    
                                     <button class="carousel-btn next" onclick="scrollCarousel('${year}', 1)">&#10095;</button>
                                 </div>
                             </div>
@@ -601,15 +618,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             })
-            .catch(error => console.error('Erreur lors du chargement des formations:', error));
+            .catch(error => console.error('Error loading formations data:', error));
     }
 });
 
-// Script for dynamic Syllabus page
+// Syllabus page — reads the ?id= URL parameter, finds the matching course,
+// and injects the full syllabus layout built by buildSyllabus()
 document.addEventListener('DOMContentLoaded', () => {
-    const root   = document.getElementById('syllabus-root');
-    const params = new URLSearchParams(window.location.search);
+    const root     = document.getElementById('syllabus-root');
+    const params   = new URLSearchParams(window.location.search);
     const courseId = parseInt(params.get('id'));
+
+    if (!root) return; // not on the syllabus page
 
     if (!courseId) {
         root.innerHTML = notFound('No course selected. <a href="formations.html">← Back to formations</a>');
@@ -624,6 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 root.innerHTML = notFound(`Course #${courseId} not found. <a href="formations.html">← Back</a>`);
                 return;
             }
+            // Update the browser tab title to reflect the selected course
             document.title = `${course.course_code} — ${course.course_name}`;
             root.innerHTML = buildSyllabus(course);
         })

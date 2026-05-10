@@ -117,6 +117,12 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
 
 
 /* ── HOME PAGE ── */
+.home-title {
+  color: var(--accent-cyan);
+  font-weight : bold;
+  text-shadow: 3px 2px var(--mid-navy);
+
+}
 .home-hero {
   background: var(--dark-navy);
   padding: 60px 60px 80px;
@@ -1058,6 +1064,114 @@ footer .copy { margin-left: auto; font-size: 13px; color: #aaa; }
   font-weight: 900;
   line-height: 1.2;
   text-align: center;
+}
+
+/* ── ABOUT US — Stats bar ── */
+.about-section-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--dark-navy);
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin: 48px 0;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.stat-number {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--accent-cyan);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+}
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── ABOUT US — Value cards ── */
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.value-card {
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: 28px 22px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+.value-card:hover {
+  transform: translateY(-4px);
+}
+.value-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.value-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+.value-card p {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* ── ABOUT US — Quote ── */
+.about-quote {
+  border-left: 4px solid var(--accent-cyan);
+  padding: 20px 28px;
+  background: var(--bg-light);
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 48px;
+}
+.about-quote-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.about-quote-author {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+/* ── ABOUT US — Responsive ── */
+@media (max-width: 1000px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+  .about-stats {
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 20px;
+  }
+  .stat-divider {
+    display: none;
+  }
 }
 
 /* Starburst SVG */
